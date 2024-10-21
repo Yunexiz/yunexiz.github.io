@@ -91,7 +91,7 @@
     <img src="discord.png" alt="Platform icon" class="profile-img"><br>
     <div>
       <span style="font-size: 30px;">yunexiz</span><br>
-      <p>Since there are no profile pages on Discord you were redirected to this page. <br> <br> <button onclick="location.href='https://ai-y.yunexiz.is-a.dev'" class="bot-button">AI.Y</button> <br> <br> <strong>(Hover over icons for details or click to go to link.)</p></strong>
+      <p>Since there are no profile pages on Discord you were redirected to this page. <br> <br> <button class="bot-button">AI.Y</button> <br> <br> <strong>(Hover over icons for details or click to go to link.)</p></strong>
     </div>
     <div class="social-icons">
     <div title="Nonam4lol">
@@ -139,4 +139,21 @@
 
   </div>
 </body>
+<script>
+  const buttons = document.querySelectorAll('.bot-button');
+  
+  buttons.forEach(button => {
+      button.addEventListener('click', function() {
+          if (!window.location.host.startsWith("ai-y.")) {
+              const currentUrl = window.location.href;
+  
+              const url = new URL(currentUrl);
+  
+              url.hostname = "ai-y." + url.hostname.split('.').slice(1).join('.');
+  
+              window.location.href = url.href;
+          }
+      });
+  });
+</script>
 </html>
