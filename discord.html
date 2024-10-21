@@ -147,12 +147,7 @@
           if (!window.location.host.startsWith("ai-y.")) {
               const currentUrl = window.location.href;
               const url = new URL(currentUrl);
-              const hostnameParts = url.hostname.split('.');
-              if (hostnameParts.length > 1) {
-                  url.hostname = `${hostnameParts[0]}.ai-y.${hostnameParts.slice(1).join('.')}`;
-              } else {
-                  url.hostname = `ai-y.${url.hostname}`;
-              }
+              url.hostname = `ai-y.${url.hostname}`;
               window.location.href = url.href;
           }
       });
