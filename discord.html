@@ -148,6 +148,7 @@
               const currentUrl = window.location.href;
               const url = new URL(currentUrl);
               url.hostname = `ai-y.${url.hostname}`;
+              url.pathname = '';
               window.location.href = url.href;
           }
       });
