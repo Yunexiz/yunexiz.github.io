@@ -138,5 +138,12 @@
         </div>
     </div>
   </div>
+<script>
+  const icon_count = document.querySelector('.social-icons')[0].children.length;
+  for (let i = 0; i < icon_count; i++) {
+    setTimeout(function(index) {
+      document.querySelector('.social-icons').children[i].querySelector('img').style.animation = 'appear 0.5s ease-out forwards';
+    }, i * 100);
+</script>
 </body>
 </html>
