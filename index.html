@@ -36,6 +36,7 @@
     .profile-img {
         border-radius: 50%;
         max-width: 100px;
+        animation: grow 1s ease-out forwards;
     }
 
     .social-icons {
@@ -65,6 +66,15 @@
     .social-icons img:hover {
       transform: scale(0.9); 
       border: none; 
+    }
+
+    @keyframes appear {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
   </style>
 </head>
