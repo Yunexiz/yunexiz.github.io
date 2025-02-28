@@ -138,23 +138,18 @@
         </div>
     </div>
   </div>
-<script>
   <script>
-  const socialIcons = document.querySelector('.social-icons').children;
-  const icon_count = socialIcons.length;
-
-  for (let i = 0; i < icon_count; i++) {
-    (function(index) {
+    const socialIcons = document.querySelector('.social-icons').children;
+    const icon_count = socialIcons.length;
+  
+    for (let i = 0; i < icon_count; i++) {
       setTimeout(function() {
-        const imageElement = socialIcons[index].querySelector('img');
+        const imageElement = socialIcons[i].querySelector('img');
         if (imageElement) {
           imageElement.style.animation = 'appear 0.5s ease-out forwards';
         }
-      }, index * 100);
-    })(i);
-  }
-</script>
-
-</script>
+      }, i * 100);
+    }
+  </script>
 </body>
 </html>
