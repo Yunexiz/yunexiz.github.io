@@ -79,13 +79,31 @@
         transform: scale(1);
       }
     }
+
+    span {
+      font-size: 20px;
+      background: linear-gradient(90deg, grey, white, grey);
+      background-size: 200% auto;
+      background-clip: text;
+      color: transparent;
+      animation: textAnimation 1s linear infinite;
+    }
+
+    @keyframes textAnimation {
+      0% {
+        background-position: 0% center;
+      }
+      100% {
+        background-position: -200% center;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="info-box">
     <img src="pfp.png" alt="Profile Picture" class="profile-img"><br>
     <div>
-        <span style="font-size: 20px;">Yunexiz</span><br>
+        <span>Yunexiz</span><br>
         <p>Hey, I'm Yu. Well not you, me, Yunexiz.<br>I'm somewhat of a developer myself. I play around with code for fun.<br><br><strong>(Hover over icons for details or click to go to link.)</p></strong>
     </div>
     <div class="social-icons">
