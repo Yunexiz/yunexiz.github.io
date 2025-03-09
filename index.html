@@ -163,7 +163,7 @@
         const isUpsideDown = urlParams.get('australia-is-upside-down') === 'true';
 
         if (isUpsideDown) {
-          document.body.style.transform = 'rotate(180deg);';
+          document.body.style.transform = 'rotate(180deg)';
         }
 
         if (!urlParams.has('australia-is-upside-down')) {
@@ -171,7 +171,7 @@
           const data = await response.json();
 
           if (data.country === 'AU') {
-            document.body.style.transform = 'rotate(180deg);';
+            document.body.style.transform = 'rotate(180deg)';
             urlParams.set('australia-is-upside-down', 'true');
             window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
           }
