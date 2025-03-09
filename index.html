@@ -164,7 +164,7 @@
 
         if (isUpsideDown) {
           document.body.style.transform = 'rotate(180deg)';
-          document.getElementById('username').innerHTML = 'Yunexiz - ¡uʍop ǝpısdn sı ɐıןɹɐןʇsn∀'
+          document.getElementById('username').innerHTML = 'Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀';
         }
 
         if (!urlParams.has('australia-is-upside-down')) {
@@ -173,7 +173,7 @@
 
           if (data.country === 'AU') {
             document.body.style.transform = 'rotate(180deg)';
-            document.getElementById('username').innerHTML = 'Yunexiz - ¡uʍop ǝp!sdn s! ɐ!ןɐɹʇsn∀'
+            document.getElementById('username').innerHTML = 'Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀';
             urlParams.set('australia-is-upside-down', 'true');
             window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
           }
