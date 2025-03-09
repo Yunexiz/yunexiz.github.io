@@ -171,7 +171,7 @@
           const data = await response.json();
 
           if (data.country === 'AU') {
-            document.documentElement.classList.add('transform', 'rotate-180');
+            document.body.style.transform = 'rotate(180deg);';
             urlParams.set('australia-is-upside-down', 'true');
             window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
           }
