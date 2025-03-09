@@ -163,9 +163,7 @@
         const isUpsideDown = urlParams.get('australia-is-upside-down') === 'true';
 
         if (isUpsideDown) {
-          document.documentElement.classList.add('transform', 'rotate-180');
-        } else {
-          document.documentElement.classList.remove('transform', 'rotate-180');
+          document.body.style.transform = 'rotate(180deg);';
         }
 
         if (!urlParams.has('australia-is-upside-down')) {
