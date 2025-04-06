@@ -104,7 +104,7 @@
 </head>
 <body>
   <div class="info-box">
-    <img src="assets/pfp.webp" alt="Profile Picture" class="profile-img"><br>
+    <img alt="Profile Picture" class="profile-img"><br>
     <div>
         <span id="username">Yunexiz</span><br>
         <p>Hey, I'm Yu. Well not you, me, Yunexiz.<br>I'm somewhat of a developer myself. I play around with code for fun.<br><br><strong>(Hover over icons for details or click to go to link.)</p></strong>
@@ -160,9 +160,9 @@
     </div>
   </div>
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
     async function checkIfAustralian() {
       try {
-        const urlParams = new URLSearchParams(window.location.search);
         const isUpsideDown = urlParams.get('australia-is-upside-down') === 'true';
 
         if (isUpsideDown) {
@@ -186,7 +186,31 @@
       }
     } 
 
+    async function setProfileImg() {
+      if (urlParams.has('profileUrl')) {
+        document.querySelector('.profile-img').src = urlParams.get('profileUrl');
+      } else {
+        fetch('https://api.lanyard.rest/v1/users/1040303561847881729')
+          .then(response => response.json())
+          .then(data => {
+            const profileHash = data?.data?.discord_user?.avatar;
+    
+            if (profileHash) {
+              document.querySelector('.profile-img').src = `https://cdn.discordapp.com/avatars/1040303561847881729/${profileHash}.webp`;
+            } else {
+              document.querySelector('.profile-img').src = '/assets/pfp.webp';
+            }
+          })
+          .catch(error => {
+            console.error(error);
+            document.querySelector('.profile-img').src = '/assets/pfp.webp';
+          });
+      }
+    }
+
     checkIfAustralian();
+    setProfileImg();
+    
     const socialIcons = document.querySelector('.social-icons').children;
     const icon_count = socialIcons.length;
   
