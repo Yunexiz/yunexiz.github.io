@@ -37,6 +37,7 @@
         border-radius: 50%;
         max-width: 100px;
         animation: appear 0.5s ease-out forwards;
+        display: none;
     }
 
     .social-icons {
@@ -187,8 +188,10 @@
     } 
 
     async function setProfileImg() {
+      const profileImg = document.querySelector('.profile-img');
       if (urlParams.has('profileUrl')) {
-        document.querySelector('.profile-img').src = urlParams.get('profileUrl');
+        profileImg.src = urlParams.get('profileUrl');
+        profileImg.style.display = 'block';
       } else {
         fetch('https://api.lanyard.rest/v1/users/1040303561847881729')
           .then(response => response.json())
@@ -196,14 +199,17 @@
             const profileHash = data?.data?.discord_user?.avatar;
     
             if (profileHash) {
-              document.querySelector('.profile-img').src = `https://cdn.discordapp.com/avatars/1040303561847881729/${profileHash}.webp`;
+              profileImg.src = `https://cdn.discordapp.com/avatars/1040303561847881729/${profileHash}.webp`;
             } else {
-              document.querySelector('.profile-img').src = '/assets/pfp.webp';
+              profileImg.src = '/assets/pfp.webp';
             }
+            
+            profileImg.style.display = 'block';
           })
           .catch(error => {
             console.error(error);
-            document.querySelector('.profile-img').src = '/assets/pfp.webp';
+            profileImg.src = '/assets/pfp.webp';
+            profileImg.style.display = 'block';
           });
       }
     }
