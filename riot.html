@@ -2,18 +2,18 @@
 <html lang="en">
   <head>
     <title>Yunexiz</title>
-    <link rel="icon" type="image/x-icon" href="/assets/pfp.webp" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/pfp.webp" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="Yunexiz#6689" />
     <meta property="og:description" content="Find my Riot ID on this page." />
-    <meta property="og:image" content="/assets/pfp.webp" />
+    <meta property="og:image" content="/assets/images/pfp.webp" />
     <meta property="og:url" content="https://yunexiz.is-a.dev/riot" />
     <style>
       body {
         margin: 0;
         padding: 0;
-        background-image: url("/assets/back-ground.webp");
+        background-image: url("/assets/images/back-ground.webp");
         background-size: cover;
         display: flex;
         justify-content: center;
@@ -92,7 +92,7 @@
   <body>
     <div class="info-box">
       <img
-        src="/assets/riot.webp"
+        src="/assets/images/riot.webp"
         alt="Platform icon"
         class="platform-img"
       /><br />
@@ -109,49 +109,49 @@
       <div class="social-icons">
         <div title="Yunexiz">
           <a href="https://reddit.com/user/Yunexiz">
-            <img src="/assets/reddit.webp" alt="Reddit" />
+            <img src="/assets/images/reddit.webp" alt="Reddit" />
           </a>
         </div>
 
         <div title="Yunexiz">
           <a href="https://github.com/Yunexiz">
-            <img src="/assets/github.webp" alt="GitHub" />
+            <img src="/assets/images/github.webp" alt="GitHub" />
           </a>
         </div>
 
         <div title="Yunexiz">
           <a href="https://gitlab.com/Yunexiz">
-            <img src="/assets/gitlab.webp" alt="GitLab" />
+            <img src="/assets/images/gitlab.webp" alt="GitLab" />
           </a>
         </div>
 
         <div title="Yunexiz">
           <a href="https://twitter.com/Yunexiz">
-            <img src="/assets/twitter.webp" alt="Twitter" />
+            <img src="/assets/images/twitter.webp" alt="Twitter" />
           </a>
         </div>
 
         <div title="yunexiz">
           <a href="https://discord.com/users/1040303561847881729">
-            <img src="/assets/discord.webp" alt="Discord" />
+            <img src="/assets/images/discord.webp" alt="Discord" />
           </a>
         </div>
 
         <div title="My websites">
           <a href="/domains" class="preserve-params">
-            <img src="/assets/domains.webp" alt="Domains" />
+            <img src="/assets/images/domains.webp" alt="Domains" />
           </a>
         </div>
 
         <div title="Yunexiz">
           <a href="https://myanimelist.net/animelist/Yunexiz">
-            <img src="/assets/mal.webp" alt="MyAnimeList" />
+            <img src="/assets/images/mal.webp" alt="MyAnimeList" />
           </a>
         </div>
 
         <div title="Home">
           <a href="/" class="preserve-params">
-            <img src="/assets/home.webp" alt="Home" />
+            <img src="/assets/images/home.webp" alt="Home" />
           </a>
         </div>
       </div>
@@ -170,24 +170,36 @@
 
       async function checkIfAustralian() {
         try {
-          const isUpsideDown =
-            urlParams.get("au") === "true";
+          const jsonResponse = await fetch(
+            "/assets/data/anti-australians.json"
+          );
+          const jsonData = await jsonResponse.json();
+
+          const allNames = jsonData.all;
+
+          let isUpsideDown = false;
+          allNames.forEach((name) => {
+            if (urlParams.has(name) && urlParams.get(name) === "true") {
+              isUpsideDown = true;
+            }
+          });
 
           if (isUpsideDown) {
             document.body.style.transform = "rotate(180deg)";
             document.getElementById("username").innerHTML =
-              "Yunexiz#6689 - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀";
+              "Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀";
           }
 
-          if (!urlParams.has("au")) {
+          if (!isUpsideDown) {
             const response = await fetch("https://ipapi.co/json/");
             const data = await response.json();
 
             if (data.country === "AU") {
               document.body.style.transform = "rotate(180deg)";
               document.getElementById("username").innerHTML =
-                "Yunexiz#6689 - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀";
-              urlParams.set("au", "true");
+                "Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀";
+
+              urlParams.set(jsonData.main, "true");
               window.history.replaceState(
                 {},
                 "",
@@ -196,23 +208,11 @@
             }
           }
         } catch (error) {
-          console.error("Error fetching geolocation data:", error);
+          console.error("Australian check error:", error);
         }
       }
 
       checkIfAustralian();
-
-      const socialIcons = document.querySelector(".social-icons").children;
-      const icon_count = socialIcons.length;
-
-      for (let i = 0; i < icon_count; i++) {
-        setTimeout(function () {
-          const imageElement = socialIcons[i].querySelector("img");
-          if (imageElement) {
-            imageElement.style.animation = "appear 0.5s ease-out";
-          }
-        }, 500 + i * 100);
-      }
     </script>
   </body>
 </html>
