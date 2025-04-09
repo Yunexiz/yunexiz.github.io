@@ -179,12 +179,9 @@
 
           const allNames = jsonData.all;
 
-          let isUpsideDown = false;
-          allNames.forEach((name) => {
-            if (urlParams.has(name) && urlParams.get(name) === "true") {
-              isUpsideDown = true;
-            }
-          });
+          let isUpsideDown = allNames.some(
+            (name) => urlParams.has(name) && urlParams.get(name) === "true"
+          );
 
           if (isUpsideDown) {
             document.body.style.transform = "rotate(180deg)";
