@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Yunexiz</title>
-  <link rel="icon" type="image/x-icon" href="/assets/pfp.webp">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Yunexiz" />
-  <meta property="og:description" content="Hey, I'm Yunexiz. I'm somewhat of a developer myself." />
-  <meta property="og:image" content="/assets/pfp.webp" />
-  <meta property="og:url" content="https://yunexiz.is-a.dev/" />
-  <style>
-    body {
+  <head>
+    <title>Yunexiz</title>
+    <link rel="icon" type="image/x-icon" href="/assets/pfp.webp" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Yunexiz" />
+    <meta
+      property="og:description"
+      content="Hey, I'm Yunexiz. I'm somewhat of a developer myself."
+    />
+    <meta property="og:image" content="/assets/pfp.webp" />
+    <meta property="og:url" content="https://yunexiz.is-a.dev/" />
+    <style>
+      body {
         margin: 0;
         padding: 0;
-        background-image: url('/assets/back-ground.webp');
+        background-image: url("/assets/back-ground.webp");
         background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
         font-family: Arial, sans-serif;
-    }
+      }
 
-    .info-box {
+      .info-box {
         background-color: rgba(0, 0, 0, 0.7);
         color: white;
         padding: 20px;
@@ -31,213 +34,227 @@
         text-align: center;
         font-family: Arial, sans-serif;
         max-width: 100vw;
-    }
+      }
 
-    .profile-img {
+      .profile-img {
         border-radius: 50%;
         max-width: 100px;
         animation: appear 0.5s ease-out forwards;
         display: none;
         margin: 0 auto;
-    }
+      }
 
-    .social-icons {
-        display: flex; 
+      .social-icons {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 20px; 
+        margin-top: 20px;
         max-width: 100vw;
-    }
+      }
 
-    .social-icons a {
+      .social-icons a {
         display: inline-block;
-        margin: 0 10px; 
+        margin: 0 10px;
         width: 50px;
         height: 50px;
         overflow: hidden;
         border-radius: 50%;
-    }
+      }
 
-    .social-icons img {
+      .social-icons img {
         width: 100%;
         height: 100%;
         transition: transform 0.2s ease-in-out;
         border-radius: 50%;
-    }
-
-    .social-icons img:hover {
-      transform: scale(1.1);
-    }
-
-    .social-icons img:active {
-      transform: scale(0.9);
-    }
-
-    @keyframes appear {
-      0% {
-        transform: scale(0);
       }
-      75% {
+
+      .social-icons img:hover {
         transform: scale(1.1);
       }
-      100% {
-        transform: scale(1);
-      }
-    }
 
-    span {
-      font-size: 30px;
-      background: linear-gradient(90deg, grey, white, grey);
-      background-size: 200% auto;
-      background-clip: text;
-      color: transparent;
-      animation: textAnimation 1s linear infinite;
-    }
+      .social-icons img:active {
+        transform: scale(0.9);
+      }
 
-    @keyframes textAnimation {
-      0% {
-        background-position: 0% center;
+      @keyframes appear {
+        0% {
+          transform: scale(0);
+        }
+        75% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
-      100% {
-        background-position: -200% center;
+
+      span {
+        font-size: 30px;
+        background: linear-gradient(90deg, grey, white, grey);
+        background-size: 200% auto;
+        background-clip: text;
+        color: transparent;
+        animation: textAnimation 1s linear infinite;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="info-box">
-    <img alt="Profile Picture" class="profile-img"><br>
-    <div>
-        <span id="username">Yunexiz</span><br>
-        <p>Hey, I'm Yu. Well not you, me, Yunexiz.<br>I'm somewhat of a developer myself. I play around with code for fun.<br><br><strong>(Hover over icons for details or click to go to link.)</p></strong>
-    </div>
-    <div class="social-icons">
+
+      @keyframes textAnimation {
+        0% {
+          background-position: 0% center;
+        }
+        100% {
+          background-position: -200% center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info-box">
+      <img alt="Profile Picture" class="profile-img" /><br />
+      <div>
+        <span id="username">Yunexiz</span><br />
+        <p>
+          Hey, I'm Yu. Well not you, me, Yunexiz.
+          <br />
+          I'm somewhat of a developer myself. I play around with code for fun.
+          <br />
+          <br />
+          <strong>Hover over icons for details or click to go to link.</strong>
+        </p>
+      </div>
+      <div class="social-icons">
         <div title="Yunexiz">
-            <a href="https://reddit.com/user/Yunexiz">
-                <img src="/assets/reddit.webp" alt="Reddit">
-            </a>
+          <a href="https://reddit.com/user/Yunexiz">
+            <img src="/assets/reddit.webp" alt="Reddit" />
+          </a>
         </div>
 
         <div title="Yunexiz">
-            <a href="https://github.com/Yunexiz">
-                <img src="/assets/github.webp" alt="GitHub">
-            </a>
+          <a href="https://github.com/Yunexiz">
+            <img src="/assets/github.webp" alt="GitHub" />
+          </a>
         </div>
 
         <div title="Yunexiz">
-            <a href="https://gitlab.com/Yunexiz">
-                <img src="/assets/gitlab.webp" alt="GitLab">
-            </a>
+          <a href="https://gitlab.com/Yunexiz">
+            <img src="/assets/gitlab.webp" alt="GitLab" />
+          </a>
         </div>
 
         <div title="Yunexiz">
-            <a href="https://twitter.com/Yunexiz">
-                <img src="/assets/twitter.webp" alt="Twitter">
-            </a>
+          <a href="https://twitter.com/Yunexiz">
+            <img src="/assets/twitter.webp" alt="Twitter" />
+          </a>
         </div>
 
         <div title="yunexiz">
-            <a href="https://discord.com/users/1040303561847881729">
-                <img src="/assets/discord.webp" alt="Discord">
-            </a>
+          <a href="https://discord.com/users/1040303561847881729">
+            <img src="/assets/discord.webp" alt="Discord" />
+          </a>
         </div>
 
         <div title="Yunexiz#6689">
-            <a href="/riot" class="preserve-params">
-                <img src="/assets/riot.webp" alt="Riot">
-            </a>
+          <a href="/riot" class="preserve-params">
+            <img src="/assets/riot.webp" alt="Riot" />
+          </a>
         </div>
 
         <div title="My websites">
-            <a href="/domains" class="preserve-params">
-                <img src="/assets/domains.webp" alt="Domains">
-            </a>
+          <a href="/domains" class="preserve-params">
+            <img src="/assets/domains.webp" alt="Domains" />
+          </a>
         </div>
 
         <div title="Yunexiz">
-            <a href="https://myanimelist.net/animelist/Yunexiz">
-                <img src="/assets/mal.webp" alt="MyAnimeList">
-            </a>
+          <a href="https://myanimelist.net/animelist/Yunexiz">
+            <img src="/assets/mal.webp" alt="MyAnimeList" />
+          </a>
         </div>
+      </div>
     </div>
-  </div>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
 
-    document.querySelectorAll(".preserve-params").forEach(link => {
-      link.addEventListener("click", function(event) {
-        event.preventDefault();
-        let destination = this.getAttribute("href");
-        window.location.href = destination + urlParams;
+      document.querySelectorAll(".preserve-params").forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          let destination = this.getAttribute("href");
+          window.location.href = destination + urlParams;
+        });
       });
-    });
 
-    async function checkIfAustralian() {
-      try {
-        const isUpsideDown = urlParams.get('australia-is-upside-down') === 'true';
+      async function checkIfAustralian() {
+        try {
+          const isUpsideDown =
+            urlParams.get("australia-is-upside-down") === "true";
 
-        if (isUpsideDown) {
-          document.body.style.transform = 'rotate(180deg)';
-          document.getElementById('username').innerHTML = 'Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀';
-        }
-
-        if (!urlParams.has('australia-is-upside-down')) {
-          const response = await fetch('https://ipapi.co/json/');
-          const data = await response.json();
-
-          if (data.country === 'AU') {
-            document.body.style.transform = 'rotate(180deg)';
-            document.getElementById('username').innerHTML = 'Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀';
-            urlParams.set('australia-is-upside-down', 'true');
-            window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+          if (isUpsideDown) {
+            document.body.style.transform = "rotate(180deg)";
+            document.getElementById("username").innerHTML =
+              "Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀";
           }
-        }
-      } catch (error) {
-        console.error('Error fetching geolocation data:', error);
-      }
-    } 
 
-    async function setProfileImg() {
-      const profileImg = document.querySelector('.profile-img');
-      if (urlParams.has('profileUrl')) {
-        profileImg.src = urlParams.get('profileUrl');
-        profileImg.style.display = 'block';
-      } else {
-        fetch('https://api.lanyard.rest/v1/users/1040303561847881729')
-          .then(response => response.json())
-          .then(data => {
-            const profileHash = data?.data?.discord_user?.avatar;
-    
-            if (profileHash) {
-              profileImg.src = `https://cdn.discordapp.com/avatars/1040303561847881729/${profileHash}.webp`;
-            } else {
-              profileImg.src = '/assets/pfp.webp';
+          if (!urlParams.has("australia-is-upside-down")) {
+            const response = await fetch("https://ipapi.co/json/");
+            const data = await response.json();
+
+            if (data.country === "AU") {
+              document.body.style.transform = "rotate(180deg)";
+              document.getElementById("username").innerHTML =
+                "Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀";
+              urlParams.set("australia-is-upside-down", "true");
+              window.history.replaceState(
+                {},
+                "",
+                `${window.location.pathname}?${urlParams}`
+              );
             }
-            
-            profileImg.style.display = 'block';
-          })
-          .catch(error => {
-            console.error(error);
-            profileImg.src = '/assets/pfp.webp';
-            profileImg.style.display = 'block';
-          });
-      }
-    }
-
-    checkIfAustralian();
-    setProfileImg();
-    
-    const socialIcons = document.querySelector('.social-icons').children;
-    const icon_count = socialIcons.length;
-  
-    for (let i = 0; i < icon_count; i++) {
-      setTimeout(function() {
-        const imageElement = socialIcons[i].querySelector('img');
-        if (imageElement) {
-          imageElement.style.animation = 'appear 0.5s ease-out';
+          }
+        } catch (error) {
+          console.error("Error fetching geolocation data:", error);
         }
-      }, 500 + i * 100);
-    }
-  </script>
-</body>
+      }
+
+      async function setProfileImg() {
+        const profileImg = document.querySelector(".profile-img");
+        if (urlParams.has("profileUrl")) {
+          profileImg.src = urlParams.get("profileUrl");
+          profileImg.style.display = "block";
+        } else {
+          fetch("https://api.lanyard.rest/v1/users/1040303561847881729")
+            .then((response) => response.json())
+            .then((data) => {
+              const profileHash = data?.data?.discord_user?.avatar;
+
+              if (profileHash) {
+                profileImg.src = `https://cdn.discordapp.com/avatars/1040303561847881729/${profileHash}.webp`;
+              } else {
+                profileImg.src = "/assets/pfp.webp";
+              }
+
+              profileImg.style.display = "block";
+            })
+            .catch((error) => {
+              console.error(error);
+              profileImg.src = "/assets/pfp.webp";
+              profileImg.style.display = "block";
+            });
+        }
+      }
+
+      checkIfAustralian();
+      setProfileImg();
+
+      const socialIcons = document.querySelector(".social-icons").children;
+      const icon_count = socialIcons.length;
+
+      for (let i = 0; i < icon_count; i++) {
+        setTimeout(function () {
+          const imageElement = socialIcons[i].querySelector("img");
+          if (imageElement) {
+            imageElement.style.animation = "appear 0.5s ease-out";
+          }
+        }, 500 + i * 100);
+      }
+    </script>
+  </body>
 </html>
