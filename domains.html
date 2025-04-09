@@ -75,7 +75,7 @@
   <div class="info-box">
     <img src="/assets/domains.webp" alt="Domains icon" class="platform-img"><br>
     <div>
-      <span style="font-size: 30px;">Yunexiz's websites</span><br>
+      <span id="username">Yunexiz's websites</span><br>
       <p>Here's a list of the sites that I currently have available to you:<br>
         - <a href="https://cat.is-a.dev">Cats!</a> A site that provides cat images.<br>
         - <a href="https://dog.is-a.dev">Dogs!</a> A site that provides dog images.<br>
@@ -114,7 +114,7 @@
         </div>
 
         <div title="Yunexiz#6689">
-            <a href="/riot">
+            <a href="/riot" class="preserve-params">
                 <img src="/assets/riot.webp" alt="Riot">
             </a>
         </div>
@@ -126,11 +126,62 @@
         </div>
 
         <div title="Home">
-            <a href="/">
+            <a href="/" class="preserve-params">
                 <img src="/assets/home.webp" alt="Home">
             </a>
         </div>
     </div>
   </div>
+  
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    document.querySelectorAll(".preserve-params").forEach(link => {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        let destination = this.getAttribute("href");
+        window.location.href = destination + urlParams;
+      });
+    });
+
+    async function checkIfAustralian() {
+      try {
+        const isUpsideDown = urlParams.get('australia-is-upside-down') === 'true';
+
+        if (isUpsideDown) {
+          document.body.style.transform = 'rotate(180deg)';
+          document.getElementById('username').innerHTML = `Yunexiz's websites - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀`;
+        }
+
+        if (!urlParams.has('australia-is-upside-down')) {
+          const response = await fetch('https://ipapi.co/json/');
+          const data = await response.json();
+
+          if (data.country === 'AU') {
+            document.body.style.transform = 'rotate(180deg)';
+            document.getElementById('username').innerHTML = `Yunexiz's websites - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀`;
+            urlParams.set('australia-is-upside-down', 'true');
+            window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching geolocation data:', error);
+      }
+    }
+
+    checkIfAustralian();
+    
+    const socialIcons = document.querySelector('.social-icons').children;
+    const icon_count = socialIcons.length;
+  
+    for (let i = 0; i < icon_count; i++) {
+      setTimeout(function() {
+        const imageElement = socialIcons[i].querySelector('img');
+        if (imageElement) {
+          imageElement.style.animation = 'appear 0.5s ease-out';
+        }
+      }, 500 + i * 100);
+    }
+  </script>
 </body>
 </html>

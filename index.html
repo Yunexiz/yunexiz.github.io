@@ -143,13 +143,13 @@
         </div>
 
         <div title="Yunexiz#6689">
-            <a href="/riot">
+            <a href="/riot" class="preserve-params">
                 <img src="/assets/riot.webp" alt="Riot">
             </a>
         </div>
 
         <div title="My websites">
-            <a href="/domains">
+            <a href="/domains" class="preserve-params">
                 <img src="/assets/domains.webp" alt="Domains">
             </a>
         </div>
@@ -163,6 +163,15 @@
   </div>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
+
+    document.querySelectorAll(".preserve-params").forEach(link => {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        let destination = this.getAttribute("href");
+        window.location.href = destination + urlParams;
+      });
+    });
+
     async function checkIfAustralian() {
       try {
         const isUpsideDown = urlParams.get('australia-is-upside-down') === 'true';
