@@ -173,7 +173,7 @@
       async function checkIfAustralian() {
         try {
           const isUpsideDown =
-            urlParams.get("australia-is-upside-down") === "true";
+            urlParams.get("au") === "true";
 
           if (isUpsideDown) {
             document.body.style.transform = "rotate(180deg)";
@@ -182,7 +182,7 @@
             ).innerHTML = `Yunexiz's websites - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀`;
           }
 
-          if (!urlParams.has("australia-is-upside-down")) {
+          if (!urlParams.has("au")) {
             const response = await fetch("https://ipapi.co/json/");
             const data = await response.json();
 
@@ -191,7 +191,7 @@
               document.getElementById(
                 "username"
               ).innerHTML = `Yunexiz's websites - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀`;
-              urlParams.set("australia-is-upside-down", "true");
+              urlParams.set("au", "true");
               window.history.replaceState(
                 {},
                 "",
