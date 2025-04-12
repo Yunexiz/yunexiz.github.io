@@ -173,6 +173,7 @@
             profileImg.src = profileHash
               ? `https://cdn.discordapp.com/avatars/1040303561847881729/${profileHash}.webp`
               : "/assets/images/pfp.webp";
+            urlParams.set('profileUrl', profileImg.src)
           } catch (error) {
             console.error(error);
             profileImg.src = "/assets/images/pfp.webp";
