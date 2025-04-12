@@ -72,19 +72,28 @@
 
       span {
         font-size: 30px;
-        background: linear-gradient(90deg, grey, white, grey);
-        background-size: 200% auto;
+        font-weight: bold;
+        background: linear-gradient(to right,
+          #777 30%,
+          #aaa 45%,
+          #eee 50%,
+          #aaa 55%,
+          #777 70%
+        );
+        background-size: 250% auto;
         background-clip: text;
+        -webkit-background-clip: text;
         color: transparent;
-        animation: textAnimation 1s linear infinite;
+        -webkit-text-fill-color: transparent;
+        animation: shine 3s linear infinite;
       }
 
-      @keyframes textAnimation {
+      @keyframes shine {
         0% {
-          background-position: 0% center;
+          background-position: 120% 0;
         }
         100% {
-          background-position: -200% center;
+          background-position: -20% 0;
         }
       }
     </style>
@@ -149,9 +158,9 @@
         src="/assets/images/domains.webp"
         alt="Domains icon"
         class="platform-img"
-      /><br />
+      />
       <div>
-        <span id="username">Yunexiz's websites</span><br />
+        <span id="username">Yunexiz's websites</span>
         <p>
           Here's a list of the sites that I currently have available to you:<br />
           - <a href="https://cat.is-a.dev">Cats!</a> A site that provides cat
@@ -161,6 +170,9 @@
           - <a href="https://harmony-exp.pages.dev">Harmony (exp)</a> An AI
           assistant.
         </p>
+        <footer>
+          <strong>Hover over icons for details or click to go to link.</strong>
+        </footer>
       </div>
       <div class="social-icons">
         <div title="Yunexiz">

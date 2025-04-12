@@ -89,19 +89,28 @@
 
       span {
         font-size: 30px;
-        background: linear-gradient(90deg, grey, white, grey);
-        background-size: 200% auto;
+        font-weight: bold;
+        background: linear-gradient(to right,
+          #777 30%,
+          #aaa 45%,
+          #eee 50%,
+          #aaa 55%,
+          #777 70%
+        );
+        background-size: 250% auto;
         background-clip: text;
+        -webkit-background-clip: text;
         color: transparent;
-        animation: textAnimation 1s linear infinite;
+        -webkit-text-fill-color: transparent;
+        animation: shine 3s linear infinite;
       }
 
-      @keyframes textAnimation {
+      @keyframes shine {
         0% {
-          background-position: 0% center;
+          background-position: 120% 0;
         }
         100% {
-          background-position: -200% center;
+          background-position: -20% 0;
         }
       }
     </style>
@@ -204,17 +213,17 @@
   </head>
   <body>
     <div class="info-box">
-      <img alt="Profile Picture" class="profile-img" /><br />
+      <img alt="Profile Picture" class="profile-img" />
       <div>
-        <span id="username">Yunexiz</span><br />
+        <span id="username">Yunexiz</span>
         <p>
           Hey, I'm Yu. Well not you, me, Yunexiz.
           <br />
           I'm somewhat of a developer myself. I play around with code for fun.
-          <br />
-          <br />
-          <strong>Hover over icons for details or click to go to link.</strong>
         </p>
+        <footer>
+          <strong>Hover over icons for details or click to go to link.</strong>
+        </footer>
       </div>
       <div class="social-icons">
         <div title="Yunexiz">
