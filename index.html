@@ -39,7 +39,6 @@
       .profile-img {
         border-radius: 50%;
         max-width: 100px;
-        animation: appear 0.5s ease-out forwards;
         display: none;
         margin: 0 auto;
       }
@@ -106,6 +105,102 @@
         }
       }
     </style>
+    <script defer>
+      const urlParams = new URLSearchParams(window.location.search);
+
+      document.querySelectorAll(".preserve-params").forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          let destination = this.getAttribute("href");
+          window.location.href = destination + "?" + urlParams;
+        });
+      });
+
+      async function checkIfAustralian() {
+        try {
+          const jsonResponse = await fetch(
+            "/assets/data/anti-australians.json"
+          );
+          const jsonData = await jsonResponse.json();
+
+          const allNames = jsonData.all;
+
+          let isUpsideDown = allNames.some(
+            (name) => urlParams.has(name) && urlParams.get(name) === "true"
+          );
+
+          if (isUpsideDown) {
+            document.body.style.transform = "rotate(180deg)";
+            document.getElementById("username").innerHTML =
+              "Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀";
+          }
+
+          if (!isUpsideDown) {
+            const response = await fetch("https://ipapi.co/json/");
+            const data = await response.json();
+
+            if (data.country === "AU") {
+              document.body.style.transform = "rotate(180deg)";
+              document.getElementById("username").innerHTML =
+                "Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀";
+
+              urlParams.set(jsonData.main, "true");
+              window.history.replaceState(
+                {},
+                "",
+                `${window.location.pathname}?${urlParams}`
+              );
+            }
+          }
+        } catch (error) {
+          console.error("Australian check error:", error);
+        }
+      }
+
+      async function setProfileImg() {
+        const profileImg = document.querySelector(".profile-img");
+
+        if (urlParams.has("profileUrl")) {
+          profileImg.src = urlParams.get("profileUrl");
+        } else {
+          try {
+            const response = await fetch(
+              "https://api.lanyard.rest/v1/users/1040303561847881729"
+            );
+            const data = await response.json();
+            const profileHash = data?.data?.discord_user?.avatar;
+
+            profileImg.src = profileHash
+              ? `https://cdn.discordapp.com/avatars/1040303561847881729/${profileHash}.webp`
+              : "/assets/images/pfp.webp";
+          } catch (error) {
+            console.error(error);
+            profileImg.src = "/assets/images/pfp.webp";
+          }
+        }
+
+        profileImg.style.display = "block";
+        profileImg.style.animation = "appear 0.5s ease-out forwards";
+      }
+
+      checkIfAustralian();
+
+      window.onload = function () {
+        setProfileImg();
+
+        const socialIcons = document.querySelector(".social-icons").children;
+        const icon_count = socialIcons.length;
+
+        for (let i = 0; i < icon_count; i++) {
+          setTimeout(function () {
+            const imageElement = socialIcons[i].querySelector("img");
+            if (imageElement) {
+              imageElement.style.animation = "appear 0.5s ease-out";
+            }
+          }, 500 + i * 100);
+        }
+      };
+    </script>
   </head>
   <body>
     <div class="info-box">
@@ -171,99 +266,5 @@
         </div>
       </div>
     </div>
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-
-      document.querySelectorAll(".preserve-params").forEach((link) => {
-        link.addEventListener("click", function (event) {
-          event.preventDefault();
-          let destination = this.getAttribute("href");
-          window.location.href = destination + "?" + urlParams;
-        });
-      });
-
-      async function checkIfAustralian() {
-        try {
-          const jsonResponse = await fetch(
-            "/assets/data/anti-australians.json"
-          );
-          const jsonData = await jsonResponse.json();
-
-          const allNames = jsonData.all;
-
-          let isUpsideDown = allNames.some((name) => 
-              urlParams.has(name) && urlParams.get(name) === "true"
-          );
-
-          if (isUpsideDown) {
-            document.body.style.transform = "rotate(180deg)";
-            document.getElementById("username").innerHTML =
-              "Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀";
-          }
-
-          if (!isUpsideDown) {
-            const response = await fetch("https://ipapi.co/json/");
-            const data = await response.json();
-
-            if (data.country === "AU") {
-              document.body.style.transform = "rotate(180deg)";
-              document.getElementById("username").innerHTML =
-                "Yunexiz - ¡uʍop ǝpᴉsdn sᴉ ɐᴉlɐɹʇsn∀";
-
-              urlParams.set(jsonData.main, "true");
-              window.history.replaceState(
-                {},
-                "",
-                `${window.location.pathname}?${urlParams}`
-              );
-            }
-          }
-        } catch (error) {
-          console.error("Australian check error:", error);
-        }
-      }
-
-      async function setProfileImg() {
-        const profileImg = document.querySelector(".profile-img");
-        if (urlParams.has("profileUrl")) {
-          profileImg.src = urlParams.get("profileUrl");
-          profileImg.style.display = "block";
-        } else {
-          fetch("https://api.lanyard.rest/v1/users/1040303561847881729")
-            .then((response) => response.json())
-            .then((data) => {
-              const profileHash = data?.data?.discord_user?.avatar;
-
-              if (profileHash) {
-                profileImg.src = `https://cdn.discordapp.com/avatars/1040303561847881729/${profileHash}.webp`;
-              } else {
-                profileImg.src = "/assets/images/pfp.webp";
-              }
-
-              profileImg.style.display = "block";
-            })
-            .catch((error) => {
-              console.error(error);
-              profileImg.src = "/assets/images/pfp.webp";
-              profileImg.style.display = "block";
-            });
-        }
-      }
-
-      checkIfAustralian();
-      setProfileImg();
-
-      const socialIcons = document.querySelector(".social-icons").children;
-      const icon_count = socialIcons.length;
-
-      for (let i = 0; i < icon_count; i++) {
-        setTimeout(function () {
-          const imageElement = socialIcons[i].querySelector("img");
-          if (imageElement) {
-            imageElement.style.animation = "appear 0.5s ease-out";
-          }
-        }, 500 + i * 100);
-      }
-    </script>
   </body>
 </html>
