@@ -23,6 +23,7 @@
         align-items: center;
         height: 100vh;
         font-family: Arial, sans-serif;
+        overflow-y: hidden;
       }
 
       .info-box {
@@ -75,7 +76,39 @@
         transform: scale(0.9);
       }
 
-      @keyframes appear {
+      @keyframes flyInPlace {
+        0% {
+          transform: translateY(100vh) scale(1);
+        }
+        50% {
+          transform: translateY(0) scale(1.1);
+        }
+        100% {
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes flipInWobble {
+        0% {
+          opacity: 0;
+          transform: rotateX(-90deg);
+        }
+        50% {
+          opacity: 1;
+          transform: rotateX(20deg);
+        }
+        70% {
+          transform: rotateX(-10deg);
+        }
+        85% {
+          transform: rotateX(5deg);
+        }
+        100% {
+          transform: rotateX(0);
+        }
+      }
+
+      @keyframes zoomInPlace {
         0% {
           transform: scale(0);
         }
@@ -87,9 +120,25 @@
         }
       }
 
+      @keyframes slideInWobble {
+        0% {
+          transform: translateX(-100px);
+        }
+        30% {
+          transform: translateX(15px);
+        }
+        60% {
+          transform: translateX(-7px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
       span {
         font-size: 30px;
-        background: linear-gradient(to right,
+        background: linear-gradient(
+          to right,
           #fff 30%,
           #4a90e2 45%,
           #3fbdd7 50%,
@@ -115,6 +164,30 @@
     </style>
     <script defer>
       const urlParams = new URLSearchParams(window.location.search);
+
+      async function setEnteringAnimation() {
+        if (!urlParams.has("animate") || urlParams.get("animate") === "true") {
+          const animations = [
+            "flyInPlace",
+            "flipInWobble",
+            "zoomInPlace",
+            "slideInWobble",
+          ];
+          const infoBox = document.querySelector(".info-box");
+
+          let animation;
+
+          if (urlParams.has("animation")) {
+            animation = urlParams.get("animation");
+          } else {
+            animation =
+              animations[Math.floor(Math.random() * animations.length)];
+          }
+
+          infoBox.style.animation = `${animation} 1.5s ease-in-out forwards`;
+          urlParams.set("animate", "false");
+        }
+      }
 
       async function checkIfAustralian() {
         try {
@@ -181,12 +254,12 @@
         }
 
         profileImg.style.display = "block";
-        profileImg.style.animation = "appear 0.5s ease-out forwards";
+        profileImg.style.animation = "zoomIn 0.5s ease-out forwards";
       }
 
-      checkIfAustralian();
-
       window.onload = function () {
+        setEnteringAnimation();
+        checkIfAustralian();
         setProfileImg();
 
         document.querySelectorAll(".preserve-params").forEach((link) => {
@@ -204,9 +277,9 @@
           setTimeout(function () {
             const imageElement = socialIcons[i].querySelector("img");
             if (imageElement) {
-              imageElement.style.animation = "appear 0.5s ease-out";
+              imageElement.style.animation = "zoomIn 0.5s ease-out";
             }
-          }, 500 + i * 100);
+          }, 3000 + i * 100);
         }
       };
     </script>
