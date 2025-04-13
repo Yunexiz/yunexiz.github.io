@@ -90,11 +90,11 @@
       span {
         font-size: 30px;
         background: linear-gradient(to right,
-          #777 30%,
+          #fff 30%,
           #4a90e2 45%,
           #3fbdd7 50%,
           #50e3c2 55%,
-          #777 75%
+          #fff 75%
         );
         background-size: 250% auto;
         background-clip: text;
@@ -173,7 +173,7 @@
             profileImg.src = profileHash
               ? `https://cdn.discordapp.com/avatars/1040303561847881729/${profileHash}.webp`
               : "/assets/images/pfp.webp";
-            urlParams.set('profileUrl', profileImg.src)
+            urlParams.set("profileUrl", profileImg.src);
           } catch (error) {
             console.error(error);
             profileImg.src = "/assets/images/pfp.webp";
