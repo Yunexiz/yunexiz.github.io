@@ -1,6 +1,8 @@
 const profileImg = document.querySelector(".center-img");
 
 async function start() {
+  profileImg.style.display = "none";
+
   if (urlParams.has("profileUrl")) {
     profileImg.src = urlParams.get("profileUrl");
   } else {

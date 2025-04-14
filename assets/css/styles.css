@@ -25,7 +25,6 @@ body {
 .center-img {
   border-radius: 50%;
   max-width: 100px;
-  display: none;
   margin: 0 auto;
 }
 
