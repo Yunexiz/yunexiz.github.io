@@ -26,6 +26,14 @@ body {
   border-radius: 50%;
   max-width: 100px;
   margin: 0 auto;
+  animation: zoomInPlace 0.5s ease-out forwards;
+}
+
+img:not([src]),
+img[src=""],
+img[src^="invalid"] {
+  display: none;
+  animation: none;
 }
 
 .social-icons {
