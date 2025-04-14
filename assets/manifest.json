@@ -1,0 +1,23 @@
+{
+  "images": [
+    "/assets/images/pfp.webp",
+    "/assets/images/twitter.webp",
+    "/assets/images/discord.webp",
+    "/assets/images/domains.webp",
+    "/assets/images/github.webp",
+    "/assets/images/gitlab.webp",
+    "/assets/images/mal.webp",
+    "/assets/images/reddit.webp",
+    "/assets/images/riot.webp",
+    "/assets/images/home.webp",
+    "/assets/images/back-ground.webp"
+  ],
+  "data": ["/assets/data/anti-australians.json"],
+  "css": ["/assets/css/styles.css"],
+  "js": [
+    "/assets/js/checkIfAustralian.js",
+    "/assets/js/preserveAndStagger.js",
+    "/assets/js/setEnteringAnimation.js",
+    "/assets/js/setProfileImg.js"
+  ]
+}
