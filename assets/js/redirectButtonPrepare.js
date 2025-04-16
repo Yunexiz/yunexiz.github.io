@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("/assets/data/domains-list.json");
     const data = await response.json();
 
+    const ul = document.getElementById("domains-list");
     Object.entries(data).forEach(([name, details]) => {
       const li = document.createElement("li");
 
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       li.appendChild(button);
       li.append(` - ${details.description}`);
-      domainsList.appendChild(li);
+      ul.appendChild(li);
     });
   } catch (error) {
     console.error("Error loading domains:", error);
