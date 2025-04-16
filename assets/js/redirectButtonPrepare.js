@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const ul = document.getElementById("domains-list");
-
   try {
     const response = await fetch("/assets/data/domains-list.json");
     const data = await response.json();
@@ -19,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       li.appendChild(button);
       li.append(` - ${details.description}`);
-      ul.appendChild(li);
+      domainsList.appendChild(li);
     });
   } catch (error) {
     console.error("Error loading JSON:", error);

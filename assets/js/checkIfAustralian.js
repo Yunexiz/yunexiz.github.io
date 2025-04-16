@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const urlParams = new URLSearchParams(window.location.search);
-
   try {
     const jsonResponse = await fetch("/assets/data/anti-australians.json");
     const jsonData = await jsonResponse.json();

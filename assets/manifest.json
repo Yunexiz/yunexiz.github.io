@@ -22,6 +22,7 @@
     "/assets/js/preserveAndStagger.js",
     "/assets/js/redirectButtonPrepare.js",
     "/assets/js/setEnteringAnimation.js",
-    "/assets/js/setProfileImg.js"
+    "/assets/js/setProfileImg.js",
+    "/assets/js/setupGlobalVariables.js"
   ]
 }
