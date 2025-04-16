@@ -58,17 +58,27 @@ span {
   display: inline-block;
   background: linear-gradient(
     to right,
+    #fff 10%,
     #4a90e2 25%,
     #3fbdd7 50%,
-    #50e3c2 75%
+    #50e3c2 75%,
+    #fff 75%
  );
- color: white;
+ background-size: 200%;
+ background-position: -50%;
+ color: black;
  text-align: center;
  font-size: 1rem;
  padding: 0 10px;
  outline: none;
  border: none;
  border-radius: 5px;
+ transition: color 1s ease-in-out, background-position 1s ease-in-out;
+}
+
+.redirect-button:hover {
+  background-position: 50%;
+  color: white;
 }
 
 ul {
