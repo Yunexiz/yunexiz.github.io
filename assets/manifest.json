@@ -12,7 +12,10 @@
     "/assets/images/home.webp",
     "/assets/images/back-ground.webp"
   ],
-  "data": ["/assets/data/anti-australians.json"],
+  "data": [
+    "/assets/data/domains-list.json",
+    "/assets/data/anti-australians.json"
+  ],
   "css": ["/assets/css/styles.css"],
   "js": [
     "/assets/js/checkIfAustralian.js",

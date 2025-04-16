@@ -1,0 +1,14 @@
+{
+  "Cats!": {
+    "url": "https://cat.is-a.dev",
+    "description": "A site that provides cat images."
+  },
+  "Dogs!": {
+    "url": "https://dog.is-a.dev",
+    "description": "A site that provides dog images."
+  },
+  "Harmony": {
+    "url": "https://harmony.yunexiz.is-a.dev",
+    "description": "An AI assistant."
+  }
+}

@@ -1,6 +1,6 @@
-const profileImg = document.querySelector(".center-img");
+document.addEventListener("DOMContentLoaded", async () => {
+  const profileImg = document.querySelector(".center-img");
 
-async function start() {
   if (urlParams.has("profileUrl")) {
     profileImg.src = urlParams.get("profileUrl");
   } else {
@@ -23,6 +23,4 @@ async function start() {
 
   profileImg.style.display = "block";
   profileImg.style.animation = "zoomInPlace 0.5s ease-out forwards";
-}
-
-start();
+});

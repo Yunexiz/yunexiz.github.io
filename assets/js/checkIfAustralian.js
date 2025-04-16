@@ -1,6 +1,6 @@
-const urlParams = new URLSearchParams(window.location.search);
+document.addEventListener("DOMContentLoaded", async () => {
+  const urlParams = new URLSearchParams(window.location.search);
 
-async function start() {
   try {
     const jsonResponse = await fetch("/assets/data/anti-australians.json");
     const jsonData = await jsonResponse.json();
@@ -37,6 +37,4 @@ async function start() {
   } catch (error) {
     console.error("Australian check error:", error);
   }
-}
-
-start();
+});
