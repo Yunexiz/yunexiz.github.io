@@ -13,6 +13,7 @@
     <script src="/assets/js/checkIfAustralian.js" defer></script>
     <script src="/assets/js/preserveAndStagger.js" defer></script>
     <script src="/assets/js/setEnteringAnimation.js" defer></script>
+    <script src="/assets/js/redirectButtonPrepare.js" defer></script>
   </head>
   <body>
     <div class="info-box">
@@ -23,15 +24,23 @@
       />
       <div>
         <span id="username">Yunexiz's websites</span>
-        <p>
-          Here's a list of the sites that I currently have available to you:<br />
-          - <a href="https://cat.is-a.dev">Cats!</a> A site that provides cat
-          images.<br />
-          - <a href="https://dog.is-a.dev">Dogs!</a> A site that provides dog
-          images.<br />
-          - <a href="https://harmony.yunexiz.is-a.dev">Harmony</a> An AI
-          assistant.
-        </p>
+        <ul>
+          <li>
+            <button class="redirect-button" id="cats">Cats!</button> - A site
+            that provides cat images.
+          </li>
+          <li>
+            <button class="redirect-button" id="dogs">Dogs!</button> - A site
+            that provides dog images.
+          </li>
+          <li>
+            <button class="redirect-button" id="harmony.yunexiz">
+              Harmony
+            </button>
+            - An AI assistant.
+          </li>
+        </ul>
+
         <footer>
           <strong>Hover over icons for details or click to go to link.</strong>
         </footer>

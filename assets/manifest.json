@@ -17,6 +17,7 @@
   "js": [
     "/assets/js/checkIfAustralian.js",
     "/assets/js/preserveAndStagger.js",
+    "/assets/js/redirectButtonPrepare.js",
     "/assets/js/setEnteringAnimation.js",
     "/assets/js/setProfileImg.js"
   ]

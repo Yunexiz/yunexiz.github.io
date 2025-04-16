@@ -36,6 +36,47 @@ img[src^="invalid"] {
   animation: none;
 }
 
+span {
+  font-size: 30px;
+  background: linear-gradient(
+    to right,
+    #fff 30%,
+    #4a90e2 45%,
+    #3fbdd7 50%,
+    #50e3c2 55%,
+    #fff 75%
+  );
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+.redirect-button {
+  display: inline-block;
+  background: linear-gradient(
+    to right,
+    #4a90e2 25%,
+    #3fbdd7 50%,
+    #50e3c2 75%
+ );
+ color: white;
+ text-align: center;
+ font-size: 1rem;
+ padding: 0 10px;
+ border-radius: 5px;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+li {
+  margin-bottom: 3px;
+}
+
 .social-icons {
   display: flex;
   flex-wrap: wrap;
@@ -125,24 +166,6 @@ img[src^="invalid"] {
   100% {
     transform: translateX(0);
   }
-}
-
-span {
-  font-size: 30px;
-  background: linear-gradient(
-    to right,
-    #fff 30%,
-    #4a90e2 45%,
-    #3fbdd7 50%,
-    #50e3c2 55%,
-    #fff 75%
-  );
-  background-size: 250% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
 }
 
 @keyframes shine {
