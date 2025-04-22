@@ -10,5 +10,12 @@
   "Harmony": {
     "url": "https://harmony.yunexiz.is-a.dev",
     "description": "An AI assistant."
-  }
+  },
+  "Personal API": {
+    "url": "https://api.yunexiz.is-a.dev",
+    "description": "An API to host various tools."
+  },
+  "Status": {
+    "url": "https://status.yunexiz.is-a.dev",
+    "description": "Operational statuses of my websites."
 }
