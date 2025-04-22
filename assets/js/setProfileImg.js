@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const data = await response.json();
       const profileUrl = data?.avatar_url;
 
-      profileImg.src = profileHash
+      profileImg.src = profileUrl
         ? profileUrl
         : "/assets/images/pfp.webp";
       urlParams.set("profileUrl", profileImg.src);
