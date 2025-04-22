@@ -11,9 +11,9 @@
     "url": "https://harmony.yunexiz.is-a.dev",
     "description": "A contextual AI assistant."
   },
-  "Personal API": {
+  "Opus API": {
     "url": "https://api.yunexiz.is-a.dev",
-    "description": "An API to host various tools."
+    "description": "An API to host various tools for Yu."
   },
   "Status": {
     "url": "https://status.yunexiz.is-a.dev",
