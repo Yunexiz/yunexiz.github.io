@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   } else {
     try {
       const response = await fetch(
-        "https://api.lanyard.rest/v1/users/1040303561847881729"
+        "https://api.yunexiz.is-a.dev/v0beta/discord/user/"
       );
       const data = await response.json();
-      const profileHash = data?.data?.discord_user?.avatar;
+      const profileUrl = data?.avatar_url;
 
       profileImg.src = profileHash
-        ? `https://cdn.discordapp.com/avatars/1040303561847881729/${profileHash}.webp`
+        ? profileUrl
         : "/assets/images/pfp.webp";
       urlParams.set("profileUrl", profileImg.src);
     } catch (error) {
