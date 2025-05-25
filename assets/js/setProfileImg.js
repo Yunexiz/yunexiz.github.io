@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   } else {
     try {
       const response = await fetch(
-        "https://api.yunexiz.is-a.dev/v0beta/discord/user/"
+        "https://api.yunexiz.is-a.dev/v0/discord/user/"
       );
       const data = await response.json();
       const profileUrl = data?.avatar_url;
