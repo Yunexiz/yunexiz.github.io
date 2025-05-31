@@ -3,7 +3,7 @@
     "/assets/images/pfp.webp",
     "/assets/images/twitter.webp",
     "/assets/images/discord.webp",
-    "/assets/images/domains.webp",
+    "/assets/images/websites.webp",
     "/assets/images/github.webp",
     "/assets/images/gitlab.webp",
     "/assets/images/mal.webp",
@@ -13,7 +13,7 @@
     "/assets/images/back-ground.webp"
   ],
   "data": [
-    "/assets/data/domains-list.json",
+    "/assets/data/website-list.json",
     "/assets/data/anti-australians.json"
   ],
   "css": ["/assets/css/styles.css"],

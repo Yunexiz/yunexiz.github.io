@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await fetch("/assets/data/domains-list.json");
+    const response = await fetch("/assets/data/website-list.json");
     const data = await response.json();
 
-    const ul = document.getElementById("domains-list");
+    const ul = document.getElementById("website-list");
     Object.entries(data).forEach(([name, details]) => {
       const li = document.createElement("li");
 
@@ -21,6 +21,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       ul.appendChild(li);
     });
   } catch (error) {
-    console.error("Error loading domains:", error);
+    console.error("Error loading websites:", error);
   }
 });
