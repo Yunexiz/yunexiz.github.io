@@ -7,13 +7,15 @@ document.querySelectorAll(".preserve-params").forEach((link) => {
 });
 
 const socialIcons = document.querySelector(".social-icons").children;
-const icon_count = socialIcons.length;
+const iconCount = socialIcons.length;
+const delay =
+  !urlParams.has("animate") || urlParams.get("animate") === "true" ? 1000 : 0;
 
-for (let i = 0; i < icon_count; i++) {
+for (let i = 0; i < iconCount; i++) {
   setTimeout(function () {
     const imageElement = socialIcons[i].querySelector("img");
     if (imageElement) {
       imageElement.style.animation = "zoomInPlace 0.5s ease-out";
     }
-  }, 1500 + i * 100);
+  }, 500 + delay + i * 100);
 }
