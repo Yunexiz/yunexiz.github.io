@@ -59,7 +59,7 @@ body {
     #3fbdd7,
     #50e3c2,
   );
-  box-shadow: 0 0 10px 5px rgba(63, 189, 215, 0.1);
+  box-shadow: 0 0 10px 5px rgba(63, 189, 215, 0.5);
 }
 
 .details {
