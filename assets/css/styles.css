@@ -53,7 +53,7 @@ body {
 }
 
 .info-box:hover {
-  border: 2px solid linear-gradient(
+  border: 5px solid linear-gradient(
     70deg,
     #4a90e2,
     #3fbdd7,
