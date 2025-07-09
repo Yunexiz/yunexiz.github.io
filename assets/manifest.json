@@ -16,7 +16,10 @@
     "/assets/data/website-list.json",
     "/assets/data/anti-australians.json"
   ],
-  "css": ["/assets/css/styles.css"],
+  "css": [
+    "/assets/css/styles.css",
+    "https://fonts.googleapis.com/css2?family=Spectral&family=Karla"
+  ],
   "js": [
     "/assets/js/checkIfAustralian.js",
     "/assets/js/preserveAndStagger.js",
