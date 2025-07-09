@@ -48,6 +48,18 @@ body {
   text-align: center;
   font-family: Arial, sans-serif;
   max-width: 100vw;
+  box-shadow: 0;
+  transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.info-box:hover {
+  border: 2px solid linear-gradient(
+    70deg,
+    #4a90e2,
+    #3fbdd7,
+    #50e3c2,
+  );
+  box-shadow: 0 0 10px 5px rgba(63, 189, 215, 0.1);
 }
 
 .details {
