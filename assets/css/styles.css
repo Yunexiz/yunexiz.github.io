@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral&family=Karla');
+
 body {
   margin: 0;
   padding: 0;
@@ -12,7 +14,7 @@ body {
 }
 
 .title {
-  font-family: Spectral, Arial, sans-serif;
+  font-family: 'Spectral', Arial, sans-serif;
   font-size: 30px;
   background: linear-gradient(
     to right,
@@ -49,7 +51,7 @@ body {
 }
 
 .details {
-  font-family: Karla, Arial, sans-serif;
+  font-family: 'Karla', Arial, sans-serif;
 }
 
 img:not([src]),
@@ -96,7 +98,7 @@ li {
 }
 
 i {
-  font-family: Spectral, Arial, sans-serif;
+  font-family: 'Spectral', Arial, sans-serif;
 }
 
 .social-icons {
