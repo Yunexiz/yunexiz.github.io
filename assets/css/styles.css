@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   font-family: Arial, sans-serif;
   overflow-y: hidden;
@@ -77,7 +78,33 @@ body {
   font-family: "Karla", Arial, sans-serif;
 }
 
+.guide-box {
+  margin: 3px auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 30px;
+  animation: fadeIn 2s ease-in-out;
+}
+
 footer {
+  font-family: "Spectral", Arial, sans-serif;
+  background: linear-gradient(
+    to right,
+    #fff 30%,
+    #4a90e2 45%,
+    #3fbdd7 50%,
+    #50e3c2 55%,
+    #fff 75%
+  );
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+/* footer {
   position: absolute;
   bottom: 10%;
   left: 50%;
@@ -88,7 +115,7 @@ footer {
   padding: 10px;
   font-size: 1rem;
   animation: fadeIn 2s ease-in-out;
-}
+} */
 
 img:not([src]),
 img[src=""],
