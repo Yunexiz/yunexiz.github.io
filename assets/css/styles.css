@@ -99,7 +99,7 @@ body {
   font-family: "Karla", Arial, sans-serif;
 }
 
-.guide-box {
+.message {
   margin: 3px auto;
   background-color: var(--background-color);
   backdrop-filter: blur(10px);
