@@ -14,6 +14,7 @@
   ],
   "data": [
     "/assets/data/website-list.json",
+    "/assets/data/social-icons.json",
     "/assets/data/anti-australians.json"
   ],
   "css": [
@@ -22,7 +23,7 @@
   ],
   "js": [
     "/assets/js/checkIfAustralian.js",
-    "/assets/js/preserveAndStagger.js",
+    "/assets/js/loadSocialIcons.js",
     "/assets/js/redirectButtonPrepare.js",
     "/assets/js/setEnteringAnimation.js",
     "/assets/js/setProfileImg.js"
