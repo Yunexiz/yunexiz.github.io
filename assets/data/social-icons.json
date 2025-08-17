@@ -1,0 +1,50 @@
+{
+  "discord": {
+    "alt": "Discord - Yunexiz",
+    "img": "/assets/images/discord.webp",
+    "href": "https://discord.com/users/1040303561847881729"
+  },
+  "github": {
+    "alt": "GitHub - Yunexiz",
+    "img": "/assets/images/github.webp",
+    "href": "https://github.com/Yunexiz"
+  },
+  "gitlab": {
+    "alt": "GitLab - Yunexiz",
+    "img": "/assets/images/gitlab.webp",
+    "href": "https://gitlab.com/Yunexiz"
+  },
+  "myanimelist": {
+    "alt": "MyAnimeList - Yunexiz",
+    "img": "/assets/images/mal.webp",
+    "href": "https://myanimelist.net/animelist/Yunexiz"
+  },
+  "reddit": {
+    "alt": "Reddit - Yunexiz",
+    "img": "/assets/images/reddit.webp",
+    "href": "https://reddit.com/user/Yunexiz"
+  },
+  "riot": {
+    "alt": "Riot - Yunexiz#6689",
+    "img": "/assets/images/riot.webp",
+    "href": "/riot",
+    "preserve-params": true
+  },
+  "twitter": {
+    "alt": "Twitter - Yunexiz",
+    "img": "/assets/images/twitter.webp",
+    "href": "https://twitter.com/Yunexiz"
+  },
+  "websites": {
+    "alt": "Websites",
+    "img": "/assets/images/websites.webp",
+    "href": "/websites",
+    "preserve-params": true
+  },
+  "home": {
+    "alt": "Home",
+    "img": "/assets/images/home.webp",
+    "href": "/",
+    "preserve-params": true
+  }
+}

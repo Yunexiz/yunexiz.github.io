@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", async () => {
+(async () => {
   try {
     const response = await fetch("/assets/data/website-list.json");
     const data = await response.json();
@@ -23,4 +23,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.error("Error loading websites:", error);
   }
-});
+})();
