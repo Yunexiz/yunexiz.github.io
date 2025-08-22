@@ -4,6 +4,7 @@ if (!urlParams.has("animate") || urlParams.get("animate") === "true") {
     "flipInWobble",
     "zoomInPlace",
     "slideInWobble",
+    "fadeInBounce",
   ];
   const infoBox = document.querySelector(".info-box");
 
