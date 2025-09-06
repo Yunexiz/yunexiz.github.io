@@ -1,0 +1,57 @@
+@scope (#home) {
+  :scope {
+    color: var(--primary-text-color);
+    background-color: var(--primary-background-color);
+    background-image: linear-gradient(to right, grey 1px, transparent 1px),
+      linear-gradient(to bottom, grey 1px, transparent 1px);
+    background-size: var(--grid-spacing) var(--grid-spacing);
+  }
+
+  #profile-container {
+    padding: 25px;
+    background: var(--hide-grid-background);
+    transform: scale(0);
+  }
+
+  #profile-container.visible {
+    animation: popIn 1s ease-in-out forwards;
+  }
+
+  #profile {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+  }
+
+  h1,
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--hide-grid-background);
+    opacity: 0;
+  }
+
+  h1 {
+    width: 4em;
+    height: 2.5em;
+    font-size: 3em;
+  }
+
+  h1.visible {
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+
+  h2 {
+    width: 8em;
+    height: 2em;
+    font-size: 2.5em;
+  }
+
+  h2.visible {
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 1s;
+  }
+}

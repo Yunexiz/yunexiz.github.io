@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yunexiz</title>
+    <link rel="preconnect" href="https://api.yunexiz.is-a.dev" />
+
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="assets/js/main.js" defer></script>
+    <script type="module" src="assets/js/main.js" defer></script>
   </head>
   <body>
     <div id="nav-container">
@@ -66,13 +68,51 @@
     </div>
 
     <section id="home" data-theme="dark">
+      <div class="entry-animation" id="profile-container">
+        <img
+          id="profile"
+          src="assets/images/pfp.webp"
+          styles="display: none;"
+          alt="Profile Picture"
+        />
+      </div>
       <h1 class="entry-animation">Hey.</h1>
       <h2 class="entry-animation">I'm Yunexiz.</h2>
     </section>
     <section id="about" data-theme="light">
-      <p class="entry-animation">
-        I do programming as a hobby, sometimes making little projects.
-      </p>
+      <header>
+        <h1 class="entry-animation">About Me</h1>
+        <p class="entry-animation">
+          I'm a developer, I write code. I usually just make personal projects.
+        </p>
+      </header>
+
+      <hr />
+      <div>
+        <h2 class="entry-animation" id="langs">Current Languages</h2>
+        <p class="entry-animation" id="langs-subtext">
+          Still learning new things all the time, even in the languages I've
+          "learnt".
+        </p>
+        <ul class="entry-animation">
+          <li>
+            <h3>Python</h3>
+            <p>Started out with Python.</p>
+          </li>
+          <li>
+            <h3>HTML</h3>
+            <p>Moved onto HTML for Flask/Quart.</p>
+          </li>
+          <li>
+            <h3>CSS</h3>
+            <p>HTML without CSS? No.</p>
+          </li>
+          <li>
+            <h3>Javascript</h3>
+            <p>Starting to learn Javascript now.</p>
+          </li>
+        </ul>
+      </div>
     </section>
   </body>
 </html>
