@@ -1,103 +1,126 @@
-@scope (#about) {
-  :scope {
-    justify-content: left;
-    align-items: normal;
-    color: var(--secondary-text-color);
-    background-color: var(--secondary-background-color);
-  }
+#about {
+  justify-content: left;
+  align-items: normal;
+  color: var(--secondary-text-color);
+  background-color: var(--secondary-background-color);
+}
 
-  header {
-    margin: 2em;
-  }
+#about header,
+#about div {
+  margin: 2em;
+}
 
-  header h1,
-  header h2 {
-    width: fit-content;
-    opacity: 0;
-  }
+#about header h1,
+#about header h2 {
+  width: fit-content;
+  opacity: 0;
+}
 
-  header h1.visible {
-    animation: slideRight 1s ease-out forwards;
-  }
+#about header h1.visible {
+  animation: slideRight 1s ease-out forwards;
+}
 
-  header h2.visible {
-    animation: slideUp 1s ease-out forwards;
-  }
+#about header h2.visible {
+  animation: slideUp 1s ease-out forwards;
+}
 
-  header h1 {
-    font-size: 3em;
-  }
+#about header h1 {
+  font-size: 3em;
+}
 
-  header h2 {
-    font-size: 2em;
-  }
+#about header h2 {
+  font-size: 2em;
+}
 
-  header p {
-    font-size: 1.5em;
-    width: 80%;
-    opacity: 0;
-  }
+#about header p {
+  font-size: 1.5em;
+  width: 80%;
+  opacity: 0;
+}
 
-  header p.visible {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 0.5s;
-  }
+#about header p.visible {
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
 
-  hr {
-    height: 1px;
-    background-color: var(--primary-background-color);
-    border: none;
-  }
+#about hr {
+  height: 1px;
+  background-color: var(--primary-background-color);
+  border: none;
+}
 
-  div {
-    padding: 2em;
-  }
+#langs {
+  width: fit-content;
+  font-size: 2em;
+  opacity: 0;
+}
 
-  #langs {
-    width: fit-content;
-    font-size: 2em;
-    opacity: 0;
-  }
+#langs.visible {
+  animation: slideRight 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
 
-  #langs.visible {
-    animation: slideRight 1s ease-out forwards;
-    animation-delay: 0.5s;
-  }
+#langs-subtext {
+  width: fit-content;
+  font-size: 1.25em;
+  opacity: 0;
+}
 
-  #langs-subtext {
-    width: fit-content;
-    font-size: 1.5em;
-    opacity: 0;
-  }
+#langs-subtext.visible {
+  animation: slideRight 2s ease-out forwards;
+  animation-delay: 0.5s;
+}
 
-  #langs-subtext.visible {
-    animation: slideRight 2s ease-out forwards;
-    animation-delay: 0.5s;
-  }
+#about ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 20px;
+}
 
-  ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    list-style: none;
-  }
+#about li {
+  display: flex;
+  flex-direction: column;
+  color: var(--primary-text-color);
+  background-color: var(--primary-background-color);
+  margin: 10px;
+  padding: 10px;
+  border: var(--primary-border);
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
 
-  li {
-    display: flex;
-    flex-direction: column;
-    color: var(--primary-text-color);
-    background-color: var(--primary-background-color);
-    margin: 10px;
-    padding: 10px;
-    border: var(--primary-border);
-    border-radius: 10px;
-    opacity: 0;
-  }
+#about li.visible {
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 1s;
+}
 
-  li.visible {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 1s;
+#about li:hover {
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-text-color);
+  border: var(--secondary-border);
+}
+
+#about footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 1em;
+  font-size: 1.5em;
+  opacity: 0;
+}
+
+#about footer.visible {
+  animation: slideUp 1s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+  #about header,
+  #about div {
+    margin: 1em;
   }
 }

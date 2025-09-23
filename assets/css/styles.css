@@ -1,5 +1,5 @@
-@import "./about.css";
-@import "./home.css";
+@import url("about.css");
+@import url("home.css");
 
 :root {
   /* Background Color */
@@ -46,6 +46,7 @@ html,
 body {
   scrollbar-width: none;
   scroll-behavior: smooth;
+  background-color: black;
 }
 
 #nav-container {
@@ -103,6 +104,15 @@ section {
 
 .entry-animation {
   visibility: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes popIn {
