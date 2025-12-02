@@ -3,9 +3,11 @@ const urlParams = new URLSearchParams(window.location.search);
 import { checkNavPlacement } from "./nav.js";
 import { setProfileImage } from "./profile.js";
 import { animate } from "./meatballs.js";
+import { displayRepos } from "./github.js";
 
 checkNavPlacement();
 animate();
+displayRepos();
 
 // Start entry animations after loading profile
 setProfileImage(urlParams).then(() => {
