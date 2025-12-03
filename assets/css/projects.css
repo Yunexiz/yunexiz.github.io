@@ -12,6 +12,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: var(--primary-background-color);
 }
 
 #projects ul {
@@ -46,8 +47,15 @@
   font-size: 1.2em;
 }
 
-#projects li img {
+#projects li div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
   margin-top: 1em;
+}
+
+#projects li div img {
   width: 2em;
   height: auto;
 }

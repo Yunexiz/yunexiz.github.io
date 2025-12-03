@@ -16,6 +16,28 @@ async function getRepos() {
     });
 }
 
+async function addLinks(repo) {
+  const links = document.createElement("div");
+  const repoLink = document.createElement("a");
+
+  repoLink.href = repo.html_url;
+  repoLink.target = "_blank";
+  repoLink.innerHTML = "<img src='/assets/images/github.svg' alt='Github'>";
+
+  links.appendChild(repoLink);
+
+  if (repo.homepage) {
+    const homepageLink = document.createElement("a");
+
+    homepageLink.href = repo.homepage;
+    homepageLink.target = "_blank";
+    homepageLink.innerHTML = "<img src='/assets/images/visit.svg' alt='Visit'>";
+
+    links.appendChild(homepageLink);
+  }
+  return links;
+}
+
 export async function displayRepos() {
   const repos = await getRepos();
 
@@ -35,15 +57,14 @@ export async function displayRepos() {
     const li = document.createElement("li");
     const title = document.createElement("h2");
     const desc = document.createElement("p");
-    const link = document.createElement("footer");
+    const links = await addLinks(repos[i]);
 
     title.textContent = repos[i].name;
     desc.textContent = repos[i].description;
-    link.innerHTML = `<a href="${repos[i].html_url}"><img src="/assets/images/github.svg" alt="Github Link"></img></a>`;
 
     li.appendChild(title);
     li.appendChild(desc);
-    li.appendChild(link);
+    li.appendChild(links);
 
     repoList.appendChild(li);
   }
