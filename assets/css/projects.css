@@ -1,64 +1,68 @@
-#projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--primary-background-color);
-}
+@scope (#projects) {
+  :scope {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-background-color);
+  }
 
-#projects canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--primary-background-color);
-}
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-background-color);
+  }
 
-#projects ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 25px;
-  list-style: none;
-  color: var(--primary-text-color);
-  margin: 50px;
-  z-index: 1;
-}
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    color: var(--primary-text-color);
+    padding: 1em;
+    z-index: 1;
+  }
 
-#projects li {
-  background: linear-gradient(120deg, rgb(35, 35, 100), rgb(50, 50, 180));
-  padding: 10px;
-  border-radius: 15px;
-  border: var(--primary-border);
-  opacity: 0;
-}
+  @scope (li) {
+    :scope {
+      background: linear-gradient(120deg, rgb(35, 35, 100), rgb(50, 50, 180));
+      padding: 1em;
+      border-radius: 15px;
+      border: var(--primary-border);
+      opacity: 0;
+    }
 
-#projects li.visible {
-  animation: slideUp 1s ease-out forwards;
-}
+    :scope.visible {
+      animation: slideUp 1s ease-out forwards;
+    }
 
-#projects li h2 {
-  font-size: 2em;
-}
+    h2 {
+      font-size: 2em;
+    }
 
-#projects li p {
-  font-size: 1.2em;
-}
+    p {
+      font-size: 1.2em;
+    }
 
-#projects li hr {
-  margin: 1em 0;
-}
+    hr {
+      margin: 1em 0;
+    }
 
-#projects li div {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  gap: 5px;
-}
+    div {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      gap: 5px;
+    }
 
-#projects li div img {
-  width: 2em;
-  height: auto;
+    div img {
+      width: 2em;
+      height: auto;
+    }
+  }
 }
