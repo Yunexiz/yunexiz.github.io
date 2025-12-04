@@ -1,6 +1,7 @@
+const profileImg = document.getElementById("profile");
+
 export async function setProfileImage(urlParams) {
   return new Promise(async (resolve) => {
-    const profileImg = document.getElementById("profile");
     if (urlParams.has("profileUrl")) {
       profileImg.src = urlParams.get("profileUrl");
       resolve();
