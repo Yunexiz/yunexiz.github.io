@@ -47,12 +47,15 @@
   font-size: 1.2em;
 }
 
+#projects li hr {
+  margin: 1em 0;
+}
+
 #projects li div {
   display: flex;
   justify-content: left;
   align-items: center;
   gap: 5px;
-  margin-top: 1em;
 }
 
 #projects li div img {

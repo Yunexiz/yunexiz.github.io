@@ -22,7 +22,8 @@ async function addLinks(repo) {
 
   repoLink.href = repo.html_url;
   repoLink.target = "_blank";
-  repoLink.innerHTML = "<img src='/assets/images/github.svg' alt='Github'>";
+  repoLink.innerHTML =
+    "<img src='/assets/images/github-mark-white.svg' alt='Github'>";
 
   links.appendChild(repoLink);
 
@@ -57,6 +58,7 @@ export async function displayRepos() {
     const li = document.createElement("li");
     const title = document.createElement("h2");
     const desc = document.createElement("p");
+    const hr = document.createElement("hr");
     const links = await addLinks(repos[i]);
 
     title.textContent = repos[i].name;
@@ -64,6 +66,7 @@ export async function displayRepos() {
 
     li.appendChild(title);
     li.appendChild(desc);
+    li.appendChild(hr);
     li.appendChild(links);
 
     repoList.appendChild(li);
