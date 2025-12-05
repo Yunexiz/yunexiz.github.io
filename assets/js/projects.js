@@ -20,12 +20,14 @@ async function addLinks(repo) {
   const links = document.createElement("div");
   const repoLink = document.createElement("a");
 
-  repoLink.href = repo.html_url;
-  repoLink.target = "_blank";
-  repoLink.innerHTML =
-    "<img src='/assets/images/github-mark-white.svg' alt='Github'>";
+  if (repo.html_url) {
+    repoLink.href = repo.html_url;
+    repoLink.target = "_blank";
+    repoLink.innerHTML =
+      "<img src='/assets/images/github-mark-white.svg' alt='Github'>";
 
-  links.appendChild(repoLink);
+    links.appendChild(repoLink);
+  }
 
   if (repo.homepage) {
     const homepageLink = document.createElement("a");
@@ -39,8 +41,15 @@ async function addLinks(repo) {
   return links;
 }
 
-export async function displayRepos() {
-  const repos = await getRepos();
+export async function displayProjects() {
+  const fetchedRepos = await getRepos();
+  const definedProjects = await fetch("/assets/data/projects.json").then(
+    (response) => response.json()
+  );
+
+  const repos = [...fetchedRepos, ...definedProjects].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
 
   if (!repos) {
     const errorMessage = document.createElement("h1");
