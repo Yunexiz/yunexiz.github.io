@@ -7,8 +7,7 @@ import { displayProjects } from "./projects.js";
 
 checkNavPlacement();
 animate();
-await displayProjects();
-await setProfileImage(urlParams);
+await Promise.all([displayProjects(), setProfileImage(urlParams)]);
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
