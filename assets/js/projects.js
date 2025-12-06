@@ -2,18 +2,17 @@ const apiUrl = "https://api.github.com/users/yunexiz/repos";
 const projects = document.getElementById("projects");
 
 async function getRepos() {
-  return await fetch(apiUrl)
-    .then((response) => {
-      if (!response.ok) throw new Error("Failed to fetch");
-      return response.json();
-    })
-    .then((json) => {
-      return json;
-    })
-    .catch((error) => {
-      console.error("Failed to fetch Github repositories.", error);
-      return null;
-    });
+  return new Promise(async (resolve, reject) => {
+    await fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to fetch");
+        return resolve(response.json());
+      })
+      .catch((error) => {
+        console.error("Failed to fetch Github repositories.", error);
+        return reject(null);
+      });
+  });
 }
 
 async function addLinks(repo) {
@@ -51,35 +50,38 @@ export async function displayProjects() {
     a.name.localeCompare(b.name)
   );
 
-  if (!repos) {
-    const errorMessage = document.createElement("h1");
-    errorMessage.textContent = "Failed to fetch repositories.";
-    return;
-  }
+  return new Promise(async (resolve, reject) => {
+    if (!repos) {
+      const errorMessage = document.createElement("h1");
+      errorMessage.textContent = "Failed to fetch repositories.";
+      return reject(errorMessage.textContent);
+    }
 
-  const repoList = document.createElement("ul");
-  repoList.id = "repo-list";
-  repoList.classList.add("entry-animation");
+    const repoList = document.createElement("ul");
+    repoList.id = "repo-list";
+    repoList.classList.add("entry-animation");
 
-  for (let i = 0; i < repos.length; i++) {
-    if (repos[i].fork === true) continue;
+    for (let i = 0; i < repos.length; i++) {
+      if (repos[i].fork === true) continue;
 
-    const li = document.createElement("li");
-    const title = document.createElement("h2");
-    const desc = document.createElement("p");
-    const hr = document.createElement("hr");
-    const links = await addLinks(repos[i]);
+      const li = document.createElement("li");
+      const title = document.createElement("h2");
+      const desc = document.createElement("p");
+      const hr = document.createElement("hr");
+      const links = await addLinks(repos[i]);
 
-    title.textContent = repos[i].name;
-    desc.textContent = repos[i].description;
+      title.textContent = repos[i].name;
+      desc.textContent = repos[i].description;
 
-    li.appendChild(title);
-    li.appendChild(desc);
-    li.appendChild(hr);
-    li.appendChild(links);
+      li.appendChild(title);
+      li.appendChild(desc);
+      li.appendChild(hr);
+      li.appendChild(links);
 
-    repoList.appendChild(li);
-  }
+      repoList.appendChild(li);
+    }
 
-  projects.appendChild(repoList);
+    projects.appendChild(repoList);
+    resolve();
+  });
 }
