@@ -1,0 +1,129 @@
+@scope (#about) {
+    :scope {
+        justify-content: left;
+        align-items: normal;
+        color: var(--secondary-text-color);
+        background-color: var(--secondary-background-color);
+    }
+
+    header,
+    div {
+        margin: 2em;
+    }
+
+    @media (max-width: 768px) {
+        header,
+        div {
+            margin: 1em;
+        }
+    }
+
+    @scope (header) {
+        h1,
+        h2 {
+            width: fit-content;
+            opacity: 0;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h1.visible {
+            animation: slideRight 1s ease-out forwards;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        h2.visible {
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        p {
+            font-size: 1.5em;
+            width: 80%;
+            opacity: 0;
+        }
+
+        p.visible {
+            animation: slideUp 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+    }
+
+    hr {
+        height: 1px;
+        background-color: var(--primary-background-color);
+        border: none;
+    }
+
+    #langs {
+        width: fit-content;
+        font-size: 2em;
+        opacity: 0;
+    }
+
+    #langs.visible {
+        animation: slideRight 1s ease-out forwards;
+        animation-delay: 0.5s;
+    }
+
+    #langs-subtext {
+        width: fit-content;
+        font-size: 1.25em;
+        opacity: 0;
+    }
+
+    #langs-subtext.visible {
+        animation: slideRight 2s ease-out forwards;
+        animation-delay: 0.5s;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 20px;
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        color: var(--primary-text-color);
+        background-color: var(--primary-background-color);
+        margin: 10px;
+        padding: 10px;
+        border: var(--primary-border);
+        border-radius: 10px;
+        opacity: 0;
+        transition: all 0.5s ease-out;
+    }
+
+    li.visible {
+        animation: slideUp 1s ease-out 1s forwards;
+    }
+
+    li:hover {
+        background-color: var(--secondary-background-color);
+        color: var(--secondary-text-color);
+        border: var(--secondary-border);
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 1em;
+        font-size: 1.5em;
+        opacity: 0;
+    }
+
+    footer.visible {
+        animation: slideUp 1s ease-out forwards;
+    }
+}

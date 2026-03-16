@@ -1,31 +1,10 @@
 {
-  "images": [
-    "/assets/images/pfp.webp",
-    "/assets/images/twitter.webp",
-    "/assets/images/discord.webp",
-    "/assets/images/websites.webp",
-    "/assets/images/github.webp",
-    "/assets/images/gitlab.webp",
-    "/assets/images/mal.webp",
-    "/assets/images/reddit.webp",
-    "/assets/images/riot.webp",
-    "/assets/images/home.webp",
-    "/assets/images/back-ground.webp"
-  ],
-  "data": [
-    "/assets/data/website-list.json",
-    "/assets/data/social-icons.json",
-    "/assets/data/anti-australians.json"
-  ],
+  "images": ["/assets/images/pfp.webp"],
+  "data": [],
   "css": [
     "/assets/css/styles.css",
-    "https://fonts.googleapis.com/css2?family=Spectral&family=Karla"
+    "/assets/css/home.css",
+    "/assets/css/about.css"
   ],
-  "js": [
-    "/assets/js/checkIfAustralian.js",
-    "/assets/js/loadSocialIcons.js",
-    "/assets/js/redirectButtonPrepare.js",
-    "/assets/js/setEnteringAnimation.js",
-    "/assets/js/setProfileImg.js"
-  ]
+  "js": ["/assets/js/main.js", "/assets/js/nav.js", "/assets/js/profile.js"]
 }

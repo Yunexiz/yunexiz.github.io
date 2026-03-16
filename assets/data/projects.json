@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Status",
+    "description": "Self hosted Uptime Kuma to show my service's uptime.",
+    "html_url": "https://github.com/louislam/uptime-kuma",
+    "homepage": "https://status.yunexiz.is-a.dev"
+  },
+  {
+    "name": "Harmony",
+    "description": "AI assistant for Discord and the web, made by me.",
+    "homepage": "https://harmony.yunexiz.is-a.dev"
+  },
+  {
+    "name": "Opus API",
+    "description": "Personal API for random tasks, made by me.",
+    "homepage": "https://api.yunexiz.is-a.dev"
+  }
+]

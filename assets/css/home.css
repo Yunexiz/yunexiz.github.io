@@ -1,0 +1,93 @@
+@scope (#home) {
+    :scope {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        color: var(--primary-text-color);
+        background-color: var(--primary-background-color);
+    }
+
+    .grid-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image:
+            linear-gradient(to right, grey 1px, transparent 1px),
+            linear-gradient(to bottom, grey 1px, transparent 1px);
+        background-size: var(--grid-spacing) var(--grid-spacing);
+        opacity: 0;
+    }
+
+    .grid-background.visible {
+        animation: fadeIn 1s ease-in forwards;
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20em;
+        height: 20em;
+        background: var(--hide-grid-background);
+        margin-top: 3em;
+        transform: scale(0);
+    }
+
+    .image-container.visible {
+        animation: popIn 2s ease-in-out 1s forwards;
+    }
+
+    #profile {
+        width: 10em;
+        height: 10em;
+        border-radius: 50%;
+        transform: scale(0);
+    }
+
+    #profile.visible {
+        animation: popIn 1s ease-in-out 1.5s forwards;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20em;
+        height: 15em;
+        background: var(--hide-grid-background);
+        margin-bottom: 10em;
+        transform: scale(0);
+    }
+
+    header.visible {
+        animation: popIn 2s ease-in-out 1.5s forwards;
+    }
+
+    h1,
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h1.visible {
+        animation: slideUp 1s ease-out 1.5s forwards;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    h2.visible {
+        animation: slideUp 1s ease-out 2s forwards;
+    }
+}
