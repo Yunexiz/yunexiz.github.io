@@ -1,0 +1,84 @@
+@scope (#socials) {
+    :scope {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+    }
+
+    @scope (header) {
+        :scope {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: var(--primary-text-color);
+            font-size: 5rem;
+            opacity: 0;
+        }
+
+        h1.visible {
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        h2 {
+            color: var(--primary-text-color);
+            font-size: 3rem;
+            opacity: 0;
+        }
+
+        h2.visible {
+            animation: slideUp 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        @media (width < 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    #social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 32px;
+    }
+
+    li {
+        transform: scale(0);
+    }
+
+    li.visible {
+        animation: popIn 2s ease-in-out 1s forwards;
+    }
+
+    a img {
+        width: 5rem;
+        height: auto;
+        transition: transform 0.25s ease;
+    }
+
+    a img:hover {
+        transform: scale(1.1);
+    }
+
+    @media (width < 768px) {
+        #social-icons {
+            gap: 16px;
+        }
+
+        a img {
+            width: 3rem;
+        }
+    }
+}

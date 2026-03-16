@@ -4,10 +4,15 @@ import { checkNavPlacement } from "./nav.js";
 import { setProfileImage } from "./profile.js";
 import { animate } from "./meatballs.js";
 import { displayProjects } from "./projects.js";
+import { displaySocials } from "./socials.js";
 
 checkNavPlacement();
 animate();
-await Promise.all([displayProjects(), setProfileImage(urlParams)]);
+await Promise.all([
+  displayProjects(),
+  displaySocials(),
+  setProfileImage(urlParams),
+]);
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

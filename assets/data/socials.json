@@ -1,0 +1,26 @@
+[
+  {
+    "name": "discord",
+    "display": "Discord",
+    "url": "https://discord.com/users/1040303561847881729",
+    "icon": "/assets/images/socials/discord.svg"
+  },
+  {
+    "name": "email",
+    "display": "Email",
+    "url": "mailto:hey@yunexiz.is-a.dev",
+    "icon": "/assets/images/socials/email.svg"
+  },
+  {
+    "name": "github",
+    "display": "GitHub",
+    "url": "https://github.com/Yunexiz",
+    "icon": "/assets/images/socials/github.svg"
+  },
+  {
+    "name": "mal",
+    "display": "MyAnimeList",
+    "url": "https://myanimelist.net/animelist/Yunexiz",
+    "icon": "/assets/images/socials/mal.svg"
+  }
+]

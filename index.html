@@ -1,129 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yunexiz</title>
-    <link rel="preconnect" href="https://api.yunexiz.is-a.dev" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Yunexiz</title>
+        <link rel="preconnect" href="https://api.yunexiz.is-a.dev" />
 
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <script type="module" src="assets/js/main.js" defer></script>
-  </head>
-  <body>
-    <div id="nav-container">
-      <nav>
-        <button data-target="home">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#e0e0e0"
-          >
-            <path
-              d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
-            />
-          </svg>
-        </button>
-        <button data-target="about">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#e0e0e0"
-          >
-            <path
-              d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
-            />
-          </svg>
-        </button>
-        <button data-target="projects">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#e0e0e0"
-          >
-            <path
-              d="M160-240v-480 520-40Zm0 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v200h-80v-200H447l-80-80H160v480h200v80H160ZM584-56 440-200l144-144 56 57-87 87 87 87-56 57Zm192 0-56-57 87-87-87-87 56-57 144 144L776-56Z"
-            />
-          </svg>
-        </button>
-        <button data-target="socials">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#e0e0e0"
-          >
-            <path
-              d="M560-680v-80h320v80H560Zm0 160v-80h320v80H560Zm0 160v-80h320v80H560Zm-240-40q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM80-160v-76q0-21 10-40t28-30q45-27 95.5-40.5T320-360q56 0 106.5 13.5T522-306q18 11 28 30t10 40v76H80Zm86-80h308q-35-20-74-30t-80-10q-41 0-80 10t-74 30Zm154-240q17 0 28.5-11.5T360-520q0-17-11.5-28.5T320-560q-17 0-28.5 11.5T280-520q0 17 11.5 28.5T320-480Zm0-40Zm0 280Z"
-            />
-          </svg>
-        </button>
-      </nav>
-    </div>
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <script type="module" src="assets/js/main.js" defer></script>
+    </head>
+    <body>
+        <div id="nav-container">
+            <nav>
+                <button data-target="home">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e0e0e0"
+                    >
+                        <path
+                            d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
+                        />
+                    </svg>
+                </button>
+                <button data-target="about">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e0e0e0"
+                    >
+                        <path
+                            d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+                        />
+                    </svg>
+                </button>
+                <button data-target="projects">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e0e0e0"
+                    >
+                        <path
+                            d="M160-240v-480 520-40Zm0 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v200h-80v-200H447l-80-80H160v480h200v80H160ZM584-56 440-200l144-144 56 57-87 87 87 87-56 57Zm192 0-56-57 87-87-87-87 56-57 144 144L776-56Z"
+                        />
+                    </svg>
+                </button>
+                <button data-target="socials">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e0e0e0"
+                    >
+                        <path
+                            d="M560-680v-80h320v80H560Zm0 160v-80h320v80H560Zm0 160v-80h320v80H560Zm-240-40q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM80-160v-76q0-21 10-40t28-30q45-27 95.5-40.5T320-360q56 0 106.5 13.5T522-306q18 11 28 30t10 40v76H80Zm86-80h308q-35-20-74-30t-80-10q-41 0-80 10t-74 30Zm154-240q17 0 28.5-11.5T360-520q0-17-11.5-28.5T320-560q-17 0-28.5 11.5T280-520q0 17 11.5 28.5T320-480Zm0-40Zm0 280Z"
+                        />
+                    </svg>
+                </button>
+            </nav>
+        </div>
 
-    <section id="home" data-theme="dark">
-      <div class="entry-animation grid-background"></div>
-      <div class="entry-animation image-container">
-        <img
-          class="entry-animation"
-          id="profile"
-          src="assets/images/pfp.webp"
-          styles="display: none;"
-          alt="Profile Picture"
-        />
-      </div>
-      <header class="entry-animation">
-        <h1 class="entry-animation">Hey.</h1>
-        <h2 class="entry-animation">I'm Yunexiz.</h2>
-      </header>
-    </section>
-    <section id="about" data-theme="light">
-      <header>
-        <h1 class="entry-animation">About Me</h1>
-        <p class="entry-animation">
-          I'm a developer, I write code. I usually just make personal projects.
-        </p>
-      </header>
+        <section id="home" data-theme="dark">
+            <div class="entry-animation grid-background"></div>
+            <div class="entry-animation image-container">
+                <img
+                    class="entry-animation"
+                    id="profile"
+                    src="assets/images/pfp.webp"
+                    styles="display: none;"
+                    alt="Profile Picture"
+                />
+            </div>
+            <header class="entry-animation">
+                <h1 class="entry-animation">Hey.</h1>
+                <h2 class="entry-animation">I'm Yunexiz.</h2>
+            </header>
+        </section>
+        <section id="about" data-theme="light">
+            <header>
+                <h1 class="entry-animation">About Me</h1>
+                <p class="entry-animation">
+                    I'm a developer, I write code. I usually just make personal
+                    projects.
+                </p>
+            </header>
 
-      <hr />
-      <div>
-        <h2 class="entry-animation" id="langs">Current Languages</h2>
-        <p class="entry-animation" id="langs-subtext">
-          What I've learned so far.
-        </p>
-        <ul class="entry-animation">
-          <li>
-            <h3>Python</h3>
-            <p>Started out with Python.</p>
-          </li>
-          <li>
-            <h3>HTML</h3>
-            <p>Moved onto HTML for Flask/Quart.</p>
-          </li>
-          <li>
-            <h3>CSS</h3>
-            <p>HTML without CSS? No.</p>
-          </li>
-          <li>
-            <h3>Javascript</h3>
-            <p>Starting to learn Javascript now.</p>
-          </li>
-        </ul>
-      </div>
+            <hr />
+            <div>
+                <h2 class="entry-animation" id="langs">Current Languages</h2>
+                <p class="entry-animation" id="langs-subtext">
+                    What I've learned so far.
+                </p>
+                <ul class="entry-animation">
+                    <li>
+                        <h3>Python</h3>
+                        <p>Started out with Python.</p>
+                    </li>
+                    <li>
+                        <h3>HTML</h3>
+                        <p>Moved onto HTML for Flask/Quart.</p>
+                    </li>
+                    <li>
+                        <h3>CSS</h3>
+                        <p>HTML without CSS?</p>
+                    </li>
+                    <li>
+                        <h3>Javascript</h3>
+                        <p>Javascript to finish the frontend.</p>
+                    </li>
+                    <li>
+                        <h3>C</h3>
+                        <p>Started learning C for performance.</p>
+                    </li>
+                </ul>
+            </div>
 
-      <footer class="entry-animation">
-        <em>I use arch btw.</em>
-      </footer>
-    </section>
+            <footer class="entry-animation">
+                <em>I use arch btw.</em>
+            </footer>
+        </section>
 
-    <section id="projects" data-theme="dark">
-      <canvas class="entry-animation" id="projects-canvas"></canvas>
-    </section>
-  </body>
+        <section id="projects" data-theme="dark">
+            <h1>Projects</h1>
+            <canvas class="entry-animation" id="projects-canvas"></canvas>
+        </section>
+
+        <section id="socials" data-theme="dark">
+            <header>
+                <h1 class="entry-animation">Socials</h1>
+                <h2 class="entry-animation">Come say "Hi!"</h2>
+            </header>
+            <ul id="social-icons" class="entry-animation"></ul>
+        </section>
+    </body>
 </html>
