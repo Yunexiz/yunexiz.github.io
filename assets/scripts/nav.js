@@ -1,5 +1,5 @@
 const nav = document.querySelector("nav");
-const sections = document.querySelectorAll("section");
+const sections = new Set(document.querySelectorAll("section"));
 let checkingNavPlacement = false;
 
 const handleNav = (id) => {
@@ -22,9 +22,8 @@ async function setNavColors(preset) {
     nav.style.border = `var(--${preset}-border)`;
 
     for (let i = 0; i < nav.children.length; i++) {
-      nav.children[
-        i
-      ].style.backgroundColor = `var(--${preset}-background-color)`;
+      nav.children[i].style.backgroundColor =
+        `var(--${preset}-background-color)`;
       nav.children[i].style.border = `var(--${preset}-border)`;
       switch (preset) {
         case "primary":
@@ -42,37 +41,31 @@ async function setNavColors(preset) {
 
 export async function checkNavPlacement() {
   return new Promise(async (resolve) => {
-    checkingNavPlacement = true;
-
     const rect = nav.getBoundingClientRect();
     const elements = document.elementsFromPoint(
       rect.x + rect.width / 2,
-      rect.y + rect.height / 2
+      rect.y + rect.height / 2,
     );
 
-    const farthestBehind = elements[elements.length - 3];
-    if (farthestBehind.tagName === "SECTION") {
-      for (let i = 0; i < sections.length; i++) {
-        if (
-          farthestBehind.id === sections[i].id &&
-          sections[i].dataset.theme === "dark"
-        ) {
-          await setNavColors("primary");
-          break;
-        } else if (
-          farthestBehind.id === sections[i].id &&
-          sections[i].dataset.theme === "light"
-        ) {
-          await setNavColors("secondary");
-          break;
-        }
-      }
+    const section = elements.find((el) => sections.has(el));
+
+    switch (section.dataset.theme) {
+      case "dark":
+        await setNavColors("primary");
+        break;
+      case "light":
+        await setNavColors("secondary");
+        break;
     }
+
     checkingNavPlacement = false;
     resolve();
   });
 }
 
-document.addEventListener("scroll", async () => {
-  if (!checkingNavPlacement) await checkNavPlacement();
+document.addEventListener("scroll", () => {
+  if (!checkingNavPlacement) {
+    checkingNavPlacement = true;
+    requestAnimationFrame(checkNavPlacement);
+  }
 });
