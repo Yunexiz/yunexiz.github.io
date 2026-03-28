@@ -1,10 +1,28 @@
 {
-  "images": ["/assets/images/pfp.webp"],
-  "data": [],
-  "css": [
-    "/assets/css/styles.css",
-    "/assets/css/home.css",
-    "/assets/css/about.css"
+  "images": [
+    "pfp.webp",
+    "github-mark.svg",
+    "github-mark-white.svg",
+    "visit.svg",
+    "socials/discord.svg",
+    "socials/github.svg",
+    "socials/mal.svg",
+    "socials/email.svg"
   ],
-  "js": ["/assets/js/main.js", "/assets/js/nav.js", "/assets/js/profile.js"]
+  "data": ["projects.json", "socials.json"],
+  "styles": [
+    "main.css",
+    "home.css",
+    "about.css",
+    "projects.css",
+    "socials.css"
+  ],
+  "scripts": [
+    "main.js",
+    "nav.js",
+    "profile.js",
+    "meatballs.js",
+    "projects.js",
+    "socials.js"
+  ]
 }
