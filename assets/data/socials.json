@@ -18,9 +18,9 @@
     "icon": "/assets/images/socials/github.svg"
   },
   {
-    "name": "mal",
-    "display": "MyAnimeList",
-    "url": "https://myanimelist.net/animelist/Yunexiz",
-    "icon": "/assets/images/socials/mal.svg"
+    "name": "gitlab",
+    "display": "GitLab",
+    "url": "https://gitlab.com/Yunexiz",
+    "icon": "/assets/images/socials/gitlab.svg"
   }
 ]
