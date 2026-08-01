@@ -27,6 +27,7 @@
         h2 {
             color: var(--primary-text-color);
             font-size: 3rem;
+            font-weight: 500;
             opacity: 0;
         }
 
@@ -59,7 +60,7 @@
     }
 
     li.visible {
-        animation: popIn 2s ease-in-out 1s forwards;
+        animation: slideUp 1s ease-in-out 0.5s forwards;
     }
 
     a img {
@@ -79,6 +80,29 @@
 
         a img {
             width: 3rem;
+        }
+    }
+
+    @scope (#horse-ring-container) {
+        :scope {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            padding: 10px;
+            background-color: var(--secondary-background-color);
+            border-radius: 10px;
+            opacity: 0;
+        }
+
+        :scope.visible {
+            animation: slideUp 1s ease-in-out 1s forwards;
+        }
+
+        a {
+            color: var(--secondary-text-color);
+            text-decoration: none;
         }
     }
 }
