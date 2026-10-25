@@ -6,10 +6,10 @@
       { "dir": "socials", "files": [ "discord.svg", "email.svg", "github.svg", "gitlab.svg" ] },
       "github-mark-white.svg",
       "github-mark.svg",
-      "pfp.webp",
+      "avatar.webp",
       "visit.svg"
     ]},
-    { "dir": "scripts", "files": [ "main.js", "meatballs.js", "nav.js", "profile.js", "projects.js", "socials.js" ] },
+    { "dir": "scripts", "files": [ "main.js", "meatballs.js", "nav.js", "avatar.js", "projects.js", "socials.js" ] },
     { "dir": "styles", "files": [ "about.css", "home.css", "main.css", "projects.css", "socials.css" ] }
   ]
 }
