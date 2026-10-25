@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 
 import { checkNavPlacement } from "./nav.js";
-import { setProfileImage } from "./profile.js";
+import { setProfileImage } from "./avatar.js";
 import { animate } from "./meatballs.js";
 import { displayProjects } from "./projects.js";
 import { displaySocials } from "./socials.js";
