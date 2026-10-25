@@ -39,14 +39,14 @@
         animation: popIn 2s ease-in-out 1s forwards;
     }
 
-    #profile {
+    #avatar {
         width: 10em;
         height: 10em;
         border-radius: 50%;
         transform: scale(0);
     }
 
-    #profile.visible {
+    #avatar.visible {
         animation: popIn 1s ease-in-out 1.5s forwards;
     }
 
