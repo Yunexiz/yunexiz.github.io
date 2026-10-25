@@ -1,9 +1,9 @@
-const profileImg = document.getElementById("profile");
+const profileImg = document.getElementById("avatar");
 
 export async function setProfileImage(urlParams) {
   return new Promise(async (resolve) => {
-    if (urlParams.has("profileUrl")) {
-      profileImg.src = urlParams.get("profileUrl");
+    if (urlParams.has("avatarUrl")) {
+      profileImg.src = urlParams.get("avatarUrl");
       resolve();
     } else {
       try {
@@ -15,12 +15,12 @@ export async function setProfileImage(urlParams) {
 
         profileImg.src = profileUrl
           ? `${profileUrl}?size=1024`
-          : "/assets/images/pfp.webp";
-        urlParams.set("profileUrl", profileImg.src);
+          : "/assets/images/avatar.webp";
+        urlParams.set("avatarUrl", profileImg.src);
         resolve();
       } catch (error) {
         console.error(error);
-        profileImg.src = "/assets/images/pfp.webp";
+        profileImg.src = "/assets/images/avatar.webp";
         resolve("Failed to fetch.");
       }
     }
