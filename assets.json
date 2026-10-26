@@ -1,15 +1,18 @@
-{
-  "dir": "assets",
-  "files": [
-    { "dir": "data", "files": [ "projects.json", "socials.json" ] },
-    { "dir": "images", "files": [
-      { "dir": "socials", "files": [ "discord.svg", "email.svg", "github.svg", "gitlab.svg" ] },
-      "github-mark-white.svg",
-      "github-mark.svg",
-      "avatar.webp",
-      "visit.svg"
-    ]},
-    { "dir": "scripts", "files": [ "main.js", "meatballs.js", "nav.js", "avatar.js", "projects.js", "socials.js" ] },
-    { "dir": "styles", "files": [ "about.css", "home.css", "main.css", "projects.css", "socials.css" ] }
-  ]
-}
+[
+  "index.html",
+  {
+    "dir": "assets",
+    "files": [
+      { "dir": "data", "files": [ "projects.json", "socials.json" ] },
+      { "dir": "images", "files": [
+        { "dir": "socials", "files": [ "discord.svg", "email.svg", "github.svg", "gitlab.svg" ] },
+        "github-mark-white.svg",
+        "github-mark.svg",
+        "avatar.webp",
+        "visit.svg"
+      ]},
+      { "dir": "scripts", "files": [ "main.js", "meatballs.js", "nav.js", "avatar.js", "projects.js", "socials.js" ] },
+      { "dir": "styles", "files": [ "about.css", "home.css", "main.css", "projects.css", "socials.css" ] }
+    ]
+  }
+]
